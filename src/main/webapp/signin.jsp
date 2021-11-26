@@ -13,14 +13,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap-table.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-table.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <!--	<link rel="stylesheet" href="css/magnific-popup.css">-->
     <!--	<link rel="stylesheet" href="css/nouislider.min.css">-->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
     <!--	<link rel="stylesheet" href="css/paymentfont.min.css">-->
-    <link rel="stylesheet" href="css/main copy.css">
+    <link rel="stylesheet" href="/css/main copy.css">
 
     <!-- Favicons -->
 
@@ -28,7 +28,7 @@
 
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="author" content="Dmitry Volkov">
+    <meta name="author" content="">
     <title>Course Scheduing</title>
 
 </head>
@@ -37,7 +37,7 @@
 <%
     request.setCharacterEncoding("utf-8");
     String m= (String) request.getAttribute("data");
-    System.out.println("进入方法了123");
+    System.out.println("进入方法了123"+m);
     if (m!=null&&m.equals("1")){  %>
     <script  type="text/javascript">
         alert("您输入的账号或密码有误，请重新输入");</script>
@@ -53,9 +53,9 @@
             <div class="col-12">
                 <div class="sign__content">
                     <!-- authorization form -->
-                    <form action="/servlet_login" class="sign__form" method="post">
+                    <form action="/student/login" class="sign__form" method="post">
                         <a href="signin.jsp" class="sign__logo">
-                            <img src="images/Course.png" alt="">
+                            <img src="${pageContext.request.contextPath}/images/Course.png" alt="">
                         </a>
 
                         <div class="sign__group">
