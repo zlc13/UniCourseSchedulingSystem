@@ -53,7 +53,7 @@
             <div class="col-12">
                 <div class="sign__content">
                     <!-- authorization form -->
-                    <form action="/student/login" class="sign__form" method="post">
+                    <form action="/login" class="sign__form" method="post">
                         <a href="signin.jsp" class="sign__logo">
                             <img src="${pageContext.request.contextPath}/images/Course.png" alt="">
                         </a>

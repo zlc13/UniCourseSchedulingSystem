@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/student")
 public class Student_control {
     private ServicesDao userService= new Mybatis();
 
@@ -31,7 +30,7 @@ public class Student_control {
 
             req.setAttribute("account_num",student_num);
 //            req.getRequestDispatcher("/servlet_head").forward(req,resp);
-            return "signin";
+            return "dt-api";
            }else{
                req.setAttribute("data","1");
 //

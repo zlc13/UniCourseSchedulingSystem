@@ -1,3 +1,6 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en" class="loading">
   <!-- BEGIN : Head-->
@@ -15,18 +18,18 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link href="css/css.css" rel="stylesheet">
+    <link href="/css/css.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
     <!-- font icons-->
-    <link rel="stylesheet" type="text/css" href="css/style.min.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.min.css">
-    <link rel="stylesheet" type="text/css" href="css/prism.min.css">
-    <link rel="stylesheet" type="text/css" href="css/datatables.min.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/responsive.dataTables.min.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN APEX CSS-->
-    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
     <!-- END APEX CSS-->
     <!-- BEGIN Page Level CSS-->
     <!-- END Page Level CSS-->
@@ -35,18 +38,41 @@
 
   <!-- BEGIN : Body-->
   <body data-col="2-columns" class=" 2-columns ">
+
+
+  <%
+    request.setCharacterEncoding("utf-8");
+    String account_num1=null;
+    response.setContentType("text/html;charset=UTF-8");//设置传输编码
+    String account_num= (String) request.getAttribute("account_num");
+    account_num1= (String) session.getAttribute("id");
+    System.out.println(account_num1+"session接收到的");
+    if (account_num!=null){
+      session.setAttribute("id",account_num);
+      session.setMaxInactiveInterval(100000);
+      System.out.println(account_num+"主页面");
+//    request.setAttribute("account_num",account_num);
+//    request.getRequestDispatcher("/servlet_head").forward(request,response);
+
+    }else {
+      account_num=account_num1;
+    }
+
+  %>
+
+
     <!-- ////////////////////////////////////////////////////////////////////////////-->
     <div class="wrapper">
 
 
       <!-- main menu-->
-      <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
+<%--      <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->--%>
       <div data-active-color="black" data-background-color="white" data-image="" class="app-sidebar">
         <!-- main menu header-->
         <!-- Sidebar Header starts-->
         <div class="sidebar-header">
           <div class="logo clearfix"><a href="index.html" class="logo-text float-left">
-              <div class="logo-img"><img  width="30px" height="30px" src="images/Course.png"></div><span class="text align-middle">学生端</span></a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i data-toggle="expanded" class="toggle-icon ft-toggle-left"></i></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-x"></i></a></div>
+              <div class="logo-img"><img  width="30px" height="30px" src="/images/Course.png"></div><span class="text align-middle">学生端</span></a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i data-toggle="expanded" class="toggle-icon ft-toggle-left"></i></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-x"></i></a></div>
         </div>
         <!-- Sidebar Header Ends-->
         <!-- / main menu header-->
@@ -59,7 +85,7 @@
               </li>
               <li class=" nav-item"><a href="grids.html"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
               </li>
-              <li class=" nav-item"><a href="dt-api.html"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
+              <li class=" nav-item"><a href="dt-api.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
               </li>
               <li class=" nav-item"><a href="chat.html"><i class="ft-message-square"></i><span data-i18n="" class="menu-title">老师信息</span></a>
               </li>
@@ -93,7 +119,7 @@
                 <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;" class="nav-link apptogglefullscreen"><i class="ft-maximize font-medium-3 blue-grey darken-4"></i>
                     <p class="d-none">全屏</p>全屏</a></li>
                 <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown" class="nav-link position-relative "><i class="ft-user font-medium-3 blue-grey darken-4"></i>
-                    <p class="d-none">用户设置</p>个人资料</a>
+                    <p class="d-none">用户设置</p><%=account_num%>个人资料</a>
 
                 </li>
                 <li class="nav-item d-none d-lg-block"><a href="javascript:;" class="nav-link position-relative notification-sidebar-toggle"><i class="ft-align-left font-medium-3 blue-grey darken-4"></i>
@@ -238,7 +264,7 @@
                     <div id="chatapp" class="col-12">
                       <h6 class="mt-1 mb-3 text-bold-400">切换账号</h6>
                       <div class="collection border-none">
-                        <div class="media mb-1"><a href="grids.html"><img  alt="96x96" src="images/SwitchAccount.png" ></a>
+                        <div class="media mb-1"><a href="grids.html"><img  alt="96x96" src="/images/SwitchAccount.png" ></a>
                           <div class="media-body">
                             <div class="clearfix">
                               <h4 class="font-medium-1 primary mt-1 mb-0 mr-auto float-left">状态</h4><span class="medium-small float-right blue-grey-text text-lighten-3">5.00 AM</span>
@@ -383,26 +409,26 @@
     </div>
     <!-- Theme customizer Ends-->
     <!-- BEGIN VENDOR JS-->
-        <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/popper.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.js" type="text/javascript"></script>
-    <script src="js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
-    <script src="js/prism.min.js" type="text/javascript"></script>
-    <script src="js/jquery.matchHeight-min.js" type="text/javascript"></script>
-    <script src="js/screenfull.min.js" type="text/javascript"></script>
-    <script src="js/pace.min.js" type="text/javascript"></script>
+        <script src="/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/popper.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+    <script src="/js/prism.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.matchHeight-min.js" type="text/javascript"></script>
+    <script src="/js/screenfull.min.js" type="text/javascript"></script>
+    <script src="/js/pace.min.js" type="text/javascript"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="js/datatables.min.js" type="text/javascript"></script>
-    <script src="js/dataTables.responsive.min.js" type="text/javascript"></script>
+    <script src="/js/datatables.min.js" type="text/javascript"></script>
+    <script src="/js/dataTables.responsive.min.js" type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN APEX JS-->
-    <script src="js/app-sidebar.js" type="text/javascript"></script>
-    <script src="js/notification-sidebar.js" type="text/javascript"></script>
-    <script src="js/customizer.js" type="text/javascript"></script>
+    <script src="/js/app-sidebar.js" type="text/javascript"></script>
+    <script src="/js/notification-sidebar.js" type="text/javascript"></script>
+    <script src="/js/customizer.js" type="text/javascript"></script>
     <!-- END APEX JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="js/datatable-api.js" type="text/javascript"></script>
+    <script src="/js/datatable-api.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
   </body>
   <!-- END : Body-->

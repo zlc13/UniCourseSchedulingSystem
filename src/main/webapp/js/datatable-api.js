@@ -69,7 +69,7 @@ $(document).ready(function() {
 
         ],
 
-        "ajax":{"url":"data/ajax.json"},
+        "ajax":{"url":"/data/ajax.json"},
 
         "columnDefs": [
             {
