@@ -1,22 +1,17 @@
-package tool;
+package Dao.impl;
 
-import Dao.service.ServicesDao;
+import Dao.service.StudentDao;
 import Model.Student;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.junit.Test;
 
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
-public class Mybatis implements ServicesDao {
-
-
-
+public class StudentDaoImpl implements StudentDao {
     @Override
     public Student LgUserItem(String student_num, String password) throws IOException {
         //核心配置文件

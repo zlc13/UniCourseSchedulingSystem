@@ -1,12 +1,11 @@
 package control;
 
 
-import Dao.service.ServicesDao;
+import Dao.service.StudentDao;
 import Model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import tool.Mybatis;
+import Dao.impl.StudentDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +14,7 @@ import java.io.IOException;
 
 @Controller
 public class Student_control {
-    private ServicesDao userService= new Mybatis();
+    private StudentDao userService= new StudentDaoImpl();
 
     @RequestMapping("/login")
        public String Selectaccount(String student_num, String password ,HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {

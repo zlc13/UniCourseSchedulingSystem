@@ -5,7 +5,7 @@ import Model.Student;
 import java.io.IOException;
 
 
-public interface ServicesDao {
+public interface StudentDao {
     public Student LgUserItem(String student_num, String password) throws IOException;
 
 
