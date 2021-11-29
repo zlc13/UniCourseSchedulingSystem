@@ -12,9 +12,15 @@
 
 
 
-    <!--2.配置数据源对象-->
+    <!--2.配置StudentService-->
+    <bean id="studentService" class="service.impl.StudentServiceImpl">
+                <property name="studentDao" ref="studentDao"/>
+    </bean>
 
-
+   <!--配置StudentDao-->
+    <bean id="studentDao" class="Dao.impl.StudentDaoImpl">
+        
+    </bean>
 
     <!--3.配置jdbc模板对象-->
 

@@ -1,11 +1,11 @@
 package control;
 
 
-import Dao.service.StudentDao;
 import Model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import Dao.impl.StudentDaoImpl;
+import service.StudentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +14,9 @@ import java.io.IOException;
 
 @Controller
 public class Student_control {
-    private StudentDao userService= new StudentDaoImpl();
+
+    @Autowired
+    private StudentService userService;
 
     @RequestMapping("/login")
        public String Selectaccount(String student_num, String password ,HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -22,6 +24,7 @@ public class Student_control {
            req.setCharacterEncoding("utf-8");
            System.out.println(student_num+password);
            Student stu=userService.LgUserItem(student_num, password);
+           
 
            if(stu!=null){
                System.out.println("进入方法了");

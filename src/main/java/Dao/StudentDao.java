@@ -1,4 +1,4 @@
-package Dao.service;
+package Dao;
 
 import Model.Student;
 
