@@ -18,14 +18,14 @@ import java.util.List;
 public class Student_control {
 
     @Autowired
-    private StudentService userService;
+    private StudentService studentService;
 
     @RequestMapping("/login")
        public String Selectaccount(String student_num, String password ,HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
            System.out.println("进入方法了");
            req.setCharacterEncoding("utf-8");
            System.out.println(student_num+password);
-           Student stu=userService.LgUserItem(student_num, password);
+           Student stu=studentService.LgUserItem(student_num, password);
            
 
            if(stu!=null){
@@ -46,7 +46,7 @@ public class Student_control {
         ModelAndView modelAndView=new ModelAndView();
 
         System.out.println(student_num+"账号");
-        List<Student> studentList=userService.ClassUserItem(student_num);
+        List<Student> studentList=studentService.ClassUserItem(student_num);
 
         System.out.println("学生合集"+studentList);
 

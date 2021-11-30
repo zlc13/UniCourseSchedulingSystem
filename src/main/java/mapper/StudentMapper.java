@@ -1,9 +1,12 @@
 package mapper;
 
 import Model.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+
+
 public interface StudentMapper {
-    public ArrayList<Student> findStu(Student student);
+    public Student findStu(Student student);
 }
