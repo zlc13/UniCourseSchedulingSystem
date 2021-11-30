@@ -5,12 +5,14 @@ import Model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import service.StudentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 public class Student_control {
@@ -38,7 +40,21 @@ public class Student_control {
 //
                return "signin";
            }
-
-
        }
+    @RequestMapping("/urclass")
+    public ModelAndView Selectaccount(String student_num,  HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        ModelAndView modelAndView=new ModelAndView();
+
+        System.out.println(student_num+"账号");
+        List<Student> studentList=userService.ClassUserItem(student_num);
+
+        System.out.println("学生合集"+studentList);
+
+        modelAndView.addObject("studentList",studentList);
+
+        modelAndView.setViewName("dt-api");
+
+
+        return modelAndView;
+    }
 }

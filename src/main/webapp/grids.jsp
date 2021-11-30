@@ -1,3 +1,7 @@
+
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en" class="loading">
   <!-- BEGIN : Head-->
@@ -40,7 +44,7 @@
 
 
       <!-- main menu-->
-      <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
+<%--      <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->--%>
       <div data-active-color="black" data-background-color="white" data-image="" class="app-sidebar">
         <!-- main menu header-->
         <!-- Sidebar Header starts-->
@@ -57,7 +61,7 @@
               <li class=" nav-item"><a href="#"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
 
               </li>
-              <li class=" nav-item"><a href="grids.html"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
+              <li class=" nav-item"><a href="grids.jsp"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
               </li>
               <li class=" nav-item"><a href="dt-api.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
               </li>
@@ -340,7 +344,7 @@
                         <div id="chatapp" class="col-12">
                           <h6 class="mt-1 mb-3 text-bold-400">切换账号</h6>
                           <div class="collection border-none">
-                            <div class="media mb-1"><a href="grids.html"><img  alt="96x96" src="images/SwitchAccount.png" ></a>
+                            <div class="media mb-1"><a href="grids.jsp"><img  alt="96x96" src="images/SwitchAccount.png" ></a>
                               <div class="media-body">
                                 <div class="clearfix">
                                   <h4 class="font-medium-1 primary mt-1 mb-0 mr-auto float-left">状态</h4><span class="medium-small float-right blue-grey-text text-lighten-3">5.00 AM</span>

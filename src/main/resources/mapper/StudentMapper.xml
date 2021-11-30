@@ -7,6 +7,16 @@
     select * from student where student_num=#{student_num} and password=#{password}
 </select>
 
+    <select id="findClass" resultType="Model.Student">
+
+        select * from student where bj_nb=#{bj_nb}
+    </select>
+
+    <select id="findItem" resultType="Model.Student">
+
+        select * from student where student_num=#{student_num}
+    </select>
+
 
 
 </mapper>

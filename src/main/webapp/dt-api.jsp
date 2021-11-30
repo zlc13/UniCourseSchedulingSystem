@@ -1,6 +1,9 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+
+
 <!DOCTYPE html>
 <html lang="en" class="loading">
   <!-- BEGIN : Head-->
@@ -83,7 +86,7 @@
               <li class=" nav-item"><a href="#"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
 
               </li>
-              <li class=" nav-item"><a href="grids.html"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
+              <li class=" nav-item"><a href="grids.jsp"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
               </li>
               <li class=" nav-item"><a href="dt-api.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
               </li>
@@ -145,9 +148,14 @@
           </p>
         </div>
         <div class="card-content ">
-          <div class="card-body table-responsive">
+          <form  class="site-form" action="/urclass" method="get">
+            <input type="hidden" name="student_num" value="<%=account_num%>">
+          <div class="card-body table-responsive" >
+            <button  class="btn btn-primary mb-2" type="submit"><i class="ft-plus"></i>&nbsp; 查看课表</button>
+
             <button id="addRow" class="btn btn-primary mb-2"><i class="ft-plus"></i>&nbsp; 添加人数</button>
-            <table id="datatable-buttonss" class="table table-striped table-bordered add-rows">
+<%--            id="datatable-buttonss"--%>
+            <table  class="table table-striped table-bordered add-rows">
               <thead>
               <tr>
                 <th>学号</th>
@@ -157,6 +165,17 @@
                 <th>专业</th>
               </tr>
               </thead>
+              <tbody>
+              <c:forEach items="${studentList}" var="student">
+              <tr>
+                <th>${student.student_num}</th>
+                <th>${student.bj_na}</th>
+                <th>${student.grade}</th>
+                <th>${student.bj_na}</th>
+                <th>${student.major}</th>
+              </tr>
+              </c:forEach>
+              </tbody>
               <tfoot>
               <tr>
                 <th>学号</th>
@@ -168,6 +187,7 @@
               </tfoot>
             </table>
           </div>
+          </form>
         </div>
       </div>
     </div>
@@ -264,7 +284,7 @@
                     <div id="chatapp" class="col-12">
                       <h6 class="mt-1 mb-3 text-bold-400">切换账号</h6>
                       <div class="collection border-none">
-                        <div class="media mb-1"><a href="grids.html"><img  alt="96x96" src="/images/SwitchAccount.png" ></a>
+                        <div class="media mb-1"><a href="grids.jsp"><img alt="96x96" src="/images/SwitchAccount.png" ></a>
                           <div class="media-body">
                             <div class="clearfix">
                               <h4 class="font-medium-1 primary mt-1 mb-0 mr-auto float-left">状态</h4><span class="medium-small float-right blue-grey-text text-lighten-3">5.00 AM</span>
