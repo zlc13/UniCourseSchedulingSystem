@@ -149,13 +149,12 @@
         </div>
         <div class="card-content ">
           <form  class="site-form" action="/urclass" method="get">
-            <input type="hidden" name="student_num" value="<%=account_num%>">
+            <input type="hidden" name="student_num" id="num" value="<%=account_num%>">
           <div class="card-body table-responsive" >
             <button  class="btn btn-primary mb-2" type="submit"><i class="ft-plus"></i>&nbsp; 查看课表</button>
 
             <button id="addRow" class="btn btn-primary mb-2"><i class="ft-plus"></i>&nbsp; 添加人数</button>
-<%--            id="datatable-buttonss"--%>
-            <table  class="table table-striped table-bordered add-rows">
+            <table id="datatable-buttonss" class="table table-striped table-bordered add-rows">
               <thead>
               <tr>
                 <th>学号</th>
@@ -169,7 +168,7 @@
               <c:forEach items="${studentList}" var="student">
               <tr>
                 <th>${student.student_num}</th>
-                <th>${student.bj_na}</th>
+                <th>${student.student_name}</th>
                 <th>${student.grade}</th>
                 <th>${student.bj_na}</th>
                 <th>${student.major}</th>
@@ -284,12 +283,12 @@
                     <div id="chatapp" class="col-12">
                       <h6 class="mt-1 mb-3 text-bold-400">切换账号</h6>
                       <div class="collection border-none">
-                        <div class="media mb-1"><a href="grids.jsp"><img alt="96x96" src="/images/SwitchAccount.png" ></a>
+                        <div class="media mb-1"><a href="signin.jsp"><img alt="96x96" src="/images/SwitchAccount.png" ></a>
                           <div class="media-body">
                             <div class="clearfix">
                               <h4 class="font-medium-1 primary mt-1 mb-0 mr-auto float-left">状态</h4><span class="medium-small float-right blue-grey-text text-lighten-3">5.00 AM</span>
                             </div>
-                            <p class="text-muted font-small-3">退出</p>
+                            <p class="text-muted font-small-3" href="signin.jsp">退出</p>
                           </div>
                         </div>
 

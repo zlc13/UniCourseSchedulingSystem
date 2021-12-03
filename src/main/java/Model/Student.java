@@ -7,6 +7,15 @@ public class Student {
     private  String bj_na;
     private  String major;
     private  String grade;
+    private  String student_name;
+
+    public String getStudent_name() {
+        return student_name;
+    }
+
+    public void setStudent_name(String student_name) {
+        this.student_name = student_name;
+    }
 
     public String getBj_nb() {
         return bj_nb;
@@ -65,6 +74,7 @@ public class Student {
                 ", bj_na='" + bj_na + '\'' +
                 ", major='" + major + '\'' +
                 ", grade='" + grade + '\'' +
+                ", student_name='" + student_name + '\'' +
                 '}';
     }
 

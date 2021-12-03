@@ -2,6 +2,8 @@ package control;
 
 
 import Model.Student;
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,8 @@ public class Student_control {
     @Autowired
     private StudentService studentService;
 
+
+    //加载登录是否符合规范
     @RequestMapping("/login")
        public String Selectaccount(String student_num, String password ,HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
            System.out.println("进入方法了");
@@ -41,8 +45,9 @@ public class Student_control {
                return "signin";
            }
        }
+       //加载班级数据方法   `
     @RequestMapping("/urclass")
-    public ModelAndView Selectaccount(String student_num,  HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    public ModelAndView Selectaccount(String student_num, HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         ModelAndView modelAndView=new ModelAndView();
 
         System.out.println(student_num+"账号");
@@ -53,7 +58,6 @@ public class Student_control {
         modelAndView.addObject("studentList",studentList);
 
         modelAndView.setViewName("dt-api");
-
 
         return modelAndView;
     }
