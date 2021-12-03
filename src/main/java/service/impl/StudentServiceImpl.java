@@ -1,7 +1,5 @@
 package service.impl;
 
-import Dao.StudentDao;
-import Dao.impl.StudentDaoImpl;
 import Model.Student;
 import mapper.StudentMapper;
 import org.apache.ibatis.io.Resources;
@@ -19,14 +17,9 @@ import java.util.List;
 @Service("studentService")
 public class StudentServiceImpl implements StudentService {
     @Autowired
-    private StudentMapper studentMapper;
+    private StudentMapper studentMapper;//mapper映射类
 
-    private StudentDao studentDao;
-    public void setStudentDao(StudentDaoImpl studentDao) {
-        this.studentDao = studentDao;
-    }
-
-
+    //具体登录实现方法
     @Override
     public Student LgUserItem(String student_num, String password) throws IOException {
 
@@ -39,16 +32,19 @@ public class StudentServiceImpl implements StudentService {
 
     }
 
+    //具体查找个人班级实现方法
     @Override
     public List<Student> ClassUserItem(String student_num) throws IOException {
 
-        Student student=studentDao.UserItem(student_num);
+        Student student=new Student();
+        student.setStudent_num(student_num);
+
+        Student student1=studentMapper.findItem(student);
 
         System.out.println("impl"+student);
-        List<Student> studentList = studentDao.ClassUserItem(student);
+        List<Student> studentList = studentMapper.findClass(student1);
 
         return studentList;
     }
-
 
 }

@@ -12,15 +12,15 @@
 
 
 
-    <!--2.配置StudentService-->
+<!--    &lt;!&ndash;2.配置StudentService&ndash;&gt;-->
     <bean id="studentService" class="service.impl.StudentServiceImpl">
-                <property name="studentDao" ref="studentDao"/>
+<!--                <property name="studentMapper" ref="studentMapper"/>-->
     </bean>
 
-   <!--配置StudentDao-->
-    <bean id="studentDao" class="Dao.impl.StudentDaoImpl">
-        
-    </bean>
+<!--   &lt;!&ndash;配置StudentDao&ndash;&gt;-->
+<!--    <bean id="studentDao" class="Dao.impl.StudentDaoImpl">-->
+<!--        -->
+<!--    </bean>-->
 
     <!--3.扫描service和mapper-->
     <context:component-scan base-package="java">
