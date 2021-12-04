@@ -8,6 +8,15 @@ public class Bjks {
     private String js_nb;
     private String bjks_nb;
     private String day;
+    private String js_name;
+
+    public String getJs_name() {
+        return js_name;
+    }
+
+    public void setJs_name(String js_name) {
+        this.js_name = js_name;
+    }
 
     public String getBj_nb() {
         return bj_nb;
@@ -75,6 +84,7 @@ public class Bjks {
                 ", js_nb='" + js_nb + '\'' +
                 ", bjks_nb='" + bjks_nb + '\'' +
                 ", day='" + day + '\'' +
+                ", js_name='" + js_name + '\'' +
                 '}';
     }
 

@@ -1,6 +1,7 @@
 package service.impl;
 
 import Model.Bjks;
+import Model.JS;
 import Model.Student;
 import mapper.StudentMapper;
 import org.apache.ibatis.io.Resources;
@@ -58,6 +59,14 @@ public class StudentServiceImpl implements StudentService {
         List<Bjks> bjksList = studentMapper.findCourse(student1);
 
         return bjksList;
+    }
+
+    @Override
+    public JS FindClasspot(String js_nb) throws IOException {
+        JS js=new JS();
+        js.setJs_nb(js_nb);
+        JS js1=studentMapper.findClasspot(js);
+        return js1;
     }
 
 }

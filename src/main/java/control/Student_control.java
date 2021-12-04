@@ -2,6 +2,7 @@ package control;
 
 
 import Model.Bjks;
+import Model.JS;
 import Model.Student;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -66,12 +68,29 @@ public class Student_control {
 
     //加载上课地点
     @RequestMapping("/classpot")
-    public List<Bjks> SearchSpot(String student_num, HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    public ModelAndView SearchSpot(String student_num, HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+
+        ModelAndView modelAndView=new ModelAndView();
 
         List<Bjks> bjksList = studentService.FindClass(student_num);
+        modelAndView.addObject("bjksList",bjksList);
+        List<JS> jsList = new ArrayList<JS>();
+        for(Bjks value:bjksList) {
+            JS js=studentService.FindClasspot(value.getJs_nb());
+//            System.out.println(js.getJs_name()+"遍历地点");
+            value.setJs_name(js.getJs_name());
+//            System.out.println(value+"课");
+
+        }
+
+        System.out.println(jsList+"班级详细信息");
+
+        modelAndView.addObject("bjksList",bjksList);
+
+        modelAndView.setViewName("courseSpot");
 
         System.out.println("班级课表"+bjksList);
 
-        return bjksList;
+        return modelAndView;
     }
 }

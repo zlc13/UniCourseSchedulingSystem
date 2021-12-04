@@ -2,6 +2,8 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html>
 <html lang="en" class="loading">
   <!-- BEGIN : Head-->
@@ -152,116 +154,976 @@
                   </tr>
                 </thead>
                 <tbody>
+
+                <%--第一节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">1:(8:25-9:10)</th>
-                    <td>None (auto)</td>
-                    <td>540px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='1'&& bjks.day=='1' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <c:set var="index"  value='0'/>
+                    <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='1'&& bjks.day=='2' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='1'&& bjks.day=='3' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='1'&& bjks.day=='4' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='1'&& bjks.day=='5' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='1'&& bjks.day=='6' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='1'&& bjks.day=='7' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
                   </tr>
+                  <%--第二节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">2:(9:15-10:00)</th>
-                    <td><code>.col-</code></td>
-                    <td><code>.col-sm-</code></td>
-                    <td><code>.col-md-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='2'&& bjks.day=='1' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='2'&& bjks.day=='2' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='2'&& bjks.day=='3' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='2'&& bjks.day=='4' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='2'&& bjks.day=='5' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='2'&& bjks.day=='6' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td><code></code></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='2'&& bjks.day=='7' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
                   </tr>
+                <%--第三节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">3:(10:10-10:55)</th>
-                    <td>None (auto)</td>
-                    <td>540px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='3'&& bjks.day=='1' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='3'&& bjks.day=='2' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='3'&& bjks.day=='3' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='3'&& bjks.day=='4' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='3'&& bjks.day=='5' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='3'&& bjks.day=='6' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='3'&& bjks.day=='7' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
                   </tr>
+
+                <%--第四节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">4:(11:00-11:45)</th>
-                    <td><code>.col-</code></td>
-                    <td><code>.col-sm-</code></td>
-                    <td><code>.col-md-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='4'&& bjks.day=='1' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='4'&& bjks.day=='2' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='4'&& bjks.day=='3' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='4'&& bjks.day=='4' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='4'&& bjks.day=='5' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='4'&& bjks.day=='6' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td><code></code></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='4'&& bjks.day=='7' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
                   </tr>
+                <%--第五节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">5:(14:25-15:10)</th>
-                    <td>None (auto)</td>
-                    <td>540px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='5'&& bjks.day=='1' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='5'&& bjks.day=='2' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='5'&& bjks.day=='3' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='5'&& bjks.day=='4' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='5'&& bjks.day=='5' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='5'&& bjks.day=='6' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='5'&& bjks.day=='7' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
                   </tr>
+                <%--第六节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">6:(15:15-16:55)</th>
-                    <td><code>.col-</code></td>
-                    <td><code>.col-sm-</code></td>
-                    <td><code>.col-md-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='6'&& bjks.day=='1' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='6'&& bjks.day=='2' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='6'&& bjks.day=='3' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='6'&& bjks.day=='4' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='6'&& bjks.day=='5' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='6'&& bjks.day=='6' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td><code></code></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='6'&& bjks.day=='7' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
                   </tr>
+                <%--第七节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">7:(16:10-16:55)</th>
-                    <td>None (auto)</td>
-                    <td>540px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='7'&& bjks.day=='1' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='7'&& bjks.day=='2' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='7'&& bjks.day=='3' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='7'&& bjks.day=='4' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='7'&& bjks.day=='5' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='7'&& bjks.day=='6' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='7'&& bjks.day=='7' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
                   </tr>
+                <%--第八节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">8:(17:00-17:45)</th>
-                    <td><code>.col-</code></td>
-                    <td><code>.col-sm-</code></td>
-                    <td><code>.col-md-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='8'&& bjks.day=='1' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='8'&& bjks.day=='2' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='8'&& bjks.day=='3' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='8'&& bjks.day=='4' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='8'&& bjks.day=='5' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='8'&& bjks.day=='6' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td><code></code></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='8'&& bjks.day=='7' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
                   </tr>
+                <%--第九节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">9:(18:30-19:15)</th>
-                    <td>None (auto)</td>
-                    <td>540px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='9'&& bjks.day=='1' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='9'&& bjks.day=='2' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='9'&& bjks.day=='3' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='9'&& bjks.day=='4' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='9'&& bjks.day=='5' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='9'&& bjks.day=='6' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='9'&& bjks.day=='7' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
                   </tr>
+                <%--第十节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">10:(19:20-20:05)</th>
-                    <td><code>.col-</code></td>
-                    <td><code>.col-sm-</code></td>
-                    <td><code>.col-md-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
-                    <td><code>.col-lg-</code></td>
-                    <td><code>.col-xl-</code></td>
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='10'&& bjks.day=='1' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='10'&& bjks.day=='2' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='10'&& bjks.day=='3' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='10'&& bjks.day=='4' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='10'&& bjks.day=='5' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='10'&& bjks.day=='6' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td><code></code></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='10'&& bjks.day=='7' }">
+                        <td><code>${bjks.js_name}</code></td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
                   </tr>
+                <%--第十一节课--%>
                   <tr>
                     <th class="text-nowrap" scope="row">11:(20:10-20:55)</th>
-                    <td>None (auto)</td>
-                    <td>540px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='11'&& bjks.day=='1' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='11'&& bjks.day=='2' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='11'&& bjks.day=='3' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='11'&& bjks.day=='4' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='11'&& bjks.day=='5' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='11'&& bjks.day=='6' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
+
+                    <c:set var="index"  value='0'/>
+                    <c:forEach items="${bjksList}" var="bjks">
+                      <c:if test="${bjks.time =='11'&& bjks.day=='7' }">
+                        <td>${bjks.js_name}</td>
+                        <c:set var="index"  value='1'/>
+                      </c:if>
+                    </c:forEach>
+
+                    <c:if test="${index=='0' }">
+                      <td></td>
+                    </c:if>
                   </tr>
+
+
                 </tbody>
 
               </table>

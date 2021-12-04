@@ -1,6 +1,7 @@
 package service;
 
 import Model.Bjks;
+import Model.JS;
 import Model.Student;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +17,6 @@ public interface StudentService {
     public List<Student> ClassUserItem(String student_num ) throws IOException;
     //查询课表
     public List<Bjks> FindClass(String student_num ) throws IOException;
-
+    //查询教室信息
+    public JS FindClasspot(String js_nb ) throws IOException;
 }

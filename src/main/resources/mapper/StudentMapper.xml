@@ -26,6 +26,10 @@
         select * from bjks_data where bj_nb=#{bj_nb}
     </select>
 
+    <select id="findClasspot"  parameterType="Model.JS" resultType="Model.JS">
+
+        select * from js_data where js_nb=#{js_nb}
+    </select>
 
 
 </mapper>
