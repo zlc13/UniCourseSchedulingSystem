@@ -133,7 +133,11 @@
         <div class="card-content">
           <div class="card-body">
             <div class="table-responsive">
-              <button id="coursetable" class="btn btn-primary mb-2"> 导出Excel</button>
+              <form  class="site-form" action="/classpot" method="get">
+                <input type="hidden" name="student_num" id="num" value="<%=id%>">
+                <button  class="btn btn-primary mb-2" type="submit"> 查看上课地点</button>
+                <button id="coursetable" class="btn btn-primary mb-2"> 导出Excel</button>
+
               <table id="yourcourse" class="table table-bordered table-striped">
                 <thead>
                   <tr>
@@ -258,10 +262,12 @@
                     <td>960px</td>
                     <td>1140px</td>
                   </tr>
-                 
-                
                 </tbody>
+
               </table>
+
+              </form>
+
             </div>
           </div>
         </div>

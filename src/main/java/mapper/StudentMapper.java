@@ -1,5 +1,6 @@
 package mapper;
 
+import Model.Bjks;
 import Model.Student;
 import org.springframework.stereotype.Service;
 
@@ -14,4 +15,7 @@ public interface StudentMapper {
     public List<Student> findClass(Student student);
     //查找个人详细信息
     public Student findItem(Student student);
+    //查找班级课表
+    public List<Bjks> findCourse(Student student);
+
 }

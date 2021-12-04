@@ -1,6 +1,7 @@
 package control;
 
 
+import Model.Bjks;
 import Model.Student;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -61,5 +62,16 @@ public class Student_control {
         modelAndView.setViewName("dt-api");
 
         return modelAndView;
+    }
+
+    //加载上课地点
+    @RequestMapping("/classpot")
+    public List<Bjks> SearchSpot(String student_num, HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+
+        List<Bjks> bjksList = studentService.FindClass(student_num);
+
+        System.out.println("班级课表"+bjksList);
+
+        return bjksList;
     }
 }

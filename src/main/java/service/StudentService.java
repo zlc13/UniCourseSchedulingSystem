@@ -1,5 +1,6 @@
 package service;
 
+import Model.Bjks;
 import Model.Student;
 import org.springframework.stereotype.Service;
 
@@ -13,4 +14,7 @@ public interface StudentService {
     public Student LgUserItem(String student_num, String password) throws IOException;
     //查询该学生班级信息
     public List<Student> ClassUserItem(String student_num ) throws IOException;
+    //查询课表
+    public List<Bjks> FindClass(String student_num ) throws IOException;
+
 }

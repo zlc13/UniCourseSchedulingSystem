@@ -1,5 +1,6 @@
 package service.impl;
 
+import Model.Bjks;
 import Model.Student;
 import mapper.StudentMapper;
 import org.apache.ibatis.io.Resources;
@@ -45,6 +46,18 @@ public class StudentServiceImpl implements StudentService {
         List<Student> studentList = studentMapper.findClass(student1);
 
         return studentList;
+    }
+
+    @Override
+    public List<Bjks> FindClass(String student_num) throws IOException {
+
+        Student student=new Student();
+        student.setStudent_num(student_num);
+        Student student1=studentMapper.findItem(student);
+
+        List<Bjks> bjksList = studentMapper.findCourse(student1);
+
+        return bjksList;
     }
 
 }
