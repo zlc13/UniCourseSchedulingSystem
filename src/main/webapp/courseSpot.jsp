@@ -118,7 +118,7 @@
         <div class="main-content">
           <div class="content-wrapper"><div class="row">
   <div class="col-sm-12">
-    <div class="content-header">课表</div>
+    <div class="content-header">上课地点</div>
   </div>
 </div>
 <!--Grid options Starts-->
@@ -127,7 +127,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">个人课表</h4>
+          <h4 class="card-title">教室地点</h4>
         </div>
 
         <div class="card-content">

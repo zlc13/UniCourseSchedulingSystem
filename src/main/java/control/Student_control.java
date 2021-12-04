@@ -26,6 +26,7 @@ public class Student_control {
     //加载登录是否符合规范
     @RequestMapping("/login")
        public String Selectaccount(String student_num, String password ,HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+
            System.out.println("进入方法了");
            req.setCharacterEncoding("utf-8");
            System.out.println(student_num+password);
