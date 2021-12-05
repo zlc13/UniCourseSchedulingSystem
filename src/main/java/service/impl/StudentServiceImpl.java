@@ -69,4 +69,11 @@ public class StudentServiceImpl implements StudentService {
         return js1;
     }
 
+    @Override
+    public Student StudentId(String student_num) {
+        Student student=new Student();
+        student.setStudent_num(student_num);
+        return studentMapper.findItem(student);
+    }
+
 }

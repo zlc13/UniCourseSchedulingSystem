@@ -9,6 +9,15 @@ public class Bjks {
     private String bjks_nb;
     private String day;
     private String js_name;
+    private String c_na;
+
+    public String getC_na() {
+        return c_na;
+    }
+
+    public void setC_na(String c_na) {
+        this.c_na = c_na;
+    }
 
     public String getJs_name() {
         return js_name;
@@ -85,6 +94,7 @@ public class Bjks {
                 ", bjks_nb='" + bjks_nb + '\'' +
                 ", day='" + day + '\'' +
                 ", js_name='" + js_name + '\'' +
+                ", c_na='" + c_na + '\'' +
                 '}';
     }
 

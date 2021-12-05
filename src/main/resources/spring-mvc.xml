@@ -14,7 +14,10 @@
 ">
 
     <!--扫描com.home.test包下的Controller-->
-    <context:component-scan base-package="control"/>
+    <!--组件扫描  主要扫描controller-->
+    <context:component-scan base-package="control">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
     <!--1.mvc注解驱动-->
     <mvc:annotation-driven/>
 

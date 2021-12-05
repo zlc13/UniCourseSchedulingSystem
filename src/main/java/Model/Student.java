@@ -8,6 +8,34 @@ public class Student {
     private  String major;
     private  String grade;
     private  String student_name;
+    private  String student_email;
+    private  String student_academy;
+    private  String student_registration;
+
+
+    public String getStudent_email() {
+        return student_email;
+    }
+
+    public void setStudent_email(String student_email) {
+        this.student_email = student_email;
+    }
+
+    public String getStudent_academy() {
+        return student_academy;
+    }
+
+    public void setStudent_academy(String student_academy) {
+        this.student_academy = student_academy;
+    }
+
+    public String getStudent_registration() {
+        return student_registration;
+    }
+
+    public void setStudent_registration(String student_registration) {
+        this.student_registration = student_registration;
+    }
 
     public String getStudent_name() {
         return student_name;
@@ -75,6 +103,9 @@ public class Student {
                 ", major='" + major + '\'' +
                 ", grade='" + grade + '\'' +
                 ", student_name='" + student_name + '\'' +
+                ", student_email='" + student_email + '\'' +
+                ", student_academy='" + student_academy + '\'' +
+                ", student_registration='" + student_registration + '\'' +
                 '}';
     }
 

@@ -74,7 +74,7 @@
         <!-- main menu header-->
         <!-- Sidebar Header starts-->
         <div class="sidebar-header">
-          <div class="logo clearfix"><a href="index.html" class="logo-text float-left">
+          <div class="logo clearfix"><a href="index.jsp" class="logo-text float-left">
               <div class="logo-img"><img  width="30px" height="30px" src="/images/Course.png"></div><span class="text align-middle">学生端</span></a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i data-toggle="expanded" class="toggle-icon ft-toggle-left"></i></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-x"></i></a></div>
         </div>
         <!-- Sidebar Header Ends-->
@@ -83,17 +83,17 @@
         <div class="sidebar-content">
           <div class="nav-container">
             <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true" class="navigation navigation-main">
-              <li class=" nav-item"><a href="#"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
+              <li class=" nav-item"><a href="index.jsp"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
 
               </li>
-              <li class=" nav-item"><a href="grids.jsp"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
+              <li class=" nav-item"><a href="grids"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
               </li>
               <li class=" nav-item"><a href="dt-api.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
               </li>
 
               <li class=" nav-item"><a href="courseSpot.jsp"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">上课地点</span></a>
               </li>
-              <li class=" nav-item"><a href="calendar.html"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">个人信息修改</span></a>
+              <li class=" nav-item"><a href="userprofile"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">个人信息修改</span></a>
               </li>
 
             </ul>
