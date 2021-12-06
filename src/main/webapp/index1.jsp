@@ -35,7 +35,23 @@
 <!-- END : Head-->
 
 <%
-    String id= (String) session.getAttribute("id");
+    request.setCharacterEncoding("utf-8");
+    String account_num1=null;
+    response.setContentType("text/html;charset=UTF-8");//设置传输编码
+    String account_num= (String) request.getAttribute("account_num");
+    account_num1= (String) session.getAttribute("id");
+    System.out.println(account_num1+"session接收到的");
+    if (account_num!=null){
+        session.setAttribute("id",account_num);
+        session.setMaxInactiveInterval(100000);
+        System.out.println(account_num+"主页面");
+//    request.setAttribute("account_num",account_num);
+//    request.getRequestDispatcher("/servlet_head").forward(request,response);
+
+    }else {
+        account_num=account_num1;
+    }
+
 %>
 
 <!-- BEGIN : Body-->
@@ -97,7 +113,7 @@
                         <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;" class="nav-link apptogglefullscreen"><i class="ft-maximize font-medium-3 blue-grey darken-4"></i>
                             <p class="d-none">全屏</p>全屏</a></li>
                         <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown" class="nav-link position-relative "><i class="ft-user font-medium-3 blue-grey darken-4"></i>
-                            <p class="d-none">用户设置</p><%=id%>个人资料</a>
+                            <p class="d-none">用户设置</p><%=account_num%>个人资料</a>
 
                         </li>
                         <li class="nav-item d-none d-lg-block"><a href="javascript:;" class="nav-link position-relative notification-sidebar-toggle"><i class="ft-align-left font-medium-3 blue-grey darken-4"></i>

@@ -12,11 +12,15 @@
 
 
 
-<!--    &lt;!&ndash;2.配置StudentService&ndash;&gt;-->
+    <!--配置StudentService-->
     <bean id="studentService" class="service.impl.StudentServiceImpl">
 <!--                <property name="studentMapper" ref="studentMapper"/>-->
     </bean>
 
+    <!--配置TeacherService-->
+    <bean id="teacherService" class="service.impl.TeacherServiceImpl">
+        <!--                <property name="studentMapper" ref="studentMapper"/>-->
+    </bean>
 <!--   &lt;!&ndash;配置StudentDao&ndash;&gt;-->
 <!--    <bean id="studentDao" class="Dao.impl.StudentDaoImpl">-->
 <!--        -->

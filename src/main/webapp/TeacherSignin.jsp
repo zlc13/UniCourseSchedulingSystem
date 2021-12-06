@@ -53,17 +53,17 @@
             <div class="col-12">
                 <div class="sign__content">
                     <!-- authorization form -->
-                    <form action="/login" class="sign__form" method="post">
+                    <form action="/Teacherlogin" class="sign__form" method="post">
                         <a href="TeacherSignin.jsp" class="sign__logo">
                             <img src="${pageContext.request.contextPath}/images/Teacher.png" alt="">
                         </a>
 
                         <div class="sign__group">
-                            <input type="text" class="sign__input" placeholder="账号" name="student_num">
+                            <input type="text" class="sign__input" placeholder="账号" name="tr_nb">
                         </div>
 
                         <div class="sign__group">
-                            <input type="password" class="sign__input" placeholder="密码" name="password">
+                            <input type="password" class="sign__input" placeholder="密码" name="tr_password">
                         </div>
 
 

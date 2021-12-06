@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TeacherMapper">
+    <!--查找老师登录是否合格-->
+    <select id="findTeacher" parameterType="Model.Teacher" resultType="Model.Teacher">
+
+        select * from tr_data where tr_nb=#{tr_nb} and tr_password=#{tr_password}
+    </select>
+
+
+
+</mapper>
