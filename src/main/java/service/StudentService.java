@@ -21,4 +21,7 @@ public interface StudentService {
     public JS FindClasspot(String js_nb ) throws IOException;
     //查询学生详细信息
     public Student StudentId(String student_num);
+    //修改学生信息
+    public void Studentupdate(Student student);
+
 }

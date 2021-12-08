@@ -8,6 +8,39 @@
         select * from tr_data where tr_nb=#{tr_nb} and tr_password=#{tr_password}
     </select>
 
+    <!--查询所教班级-->
+    <select id="findTeachClass" parameterType="Model.Teacher" resultType="Model.Tr_class">
+
+        select * from tr_class where tr_nb=#{tr_nb}
+    </select>
 
 
+    <!--查询班级详细信息-->
+    <select id="findClass" parameterType="Model.BJ" resultType="Model.BJ">
+
+        select * from bj_data where bj_nb=#{bj_nb}
+    </select>
+
+
+    <!--查找教师授课信息-->
+    <select id="findTeacherCourse"  parameterType="Model.Teacher" resultType="Model.Trjs">
+        select * from trjs_data where tr_nb=#{tr_nb}
+    </select>
+
+    <!--查找上课地点-->
+    <select id="findClasspot"  parameterType="Model.JS" resultType="Model.JS">
+
+        select * from js_data where js_nb=#{js_nb}
+    </select>
+
+    <!--Through id search teacher data-->
+    <select id="IdTeacherfind" parameterType="Model.Teacher" resultType="Model.Teacher">
+
+        select * from tr_data where tr_nb=#{tr_nb}
+    </select>
+
+    <!--Update teacher data-->
+    <select id="updateTeacher" parameterType="Model.Teacher">
+        update tr_data set tr_email=#{tr_email},tr_entrydate=#{tr_entrydate} where tr_nb=#{tr_nb}
+    </select>
 </mapper>

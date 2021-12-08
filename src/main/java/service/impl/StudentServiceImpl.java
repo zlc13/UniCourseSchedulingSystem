@@ -4,16 +4,10 @@ import Model.Bjks;
 import Model.JS;
 import Model.Student;
 import mapper.StudentMapper;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.StudentService;
-
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 @Service("studentService")
@@ -49,6 +43,7 @@ public class StudentServiceImpl implements StudentService {
         return studentList;
     }
 
+    //找上课信息
     @Override
     public List<Bjks> FindClass(String student_num) throws IOException {
 
@@ -61,6 +56,7 @@ public class StudentServiceImpl implements StudentService {
         return bjksList;
     }
 
+    //找上课地点
     @Override
     public JS FindClasspot(String js_nb) throws IOException {
         JS js=new JS();
@@ -74,6 +70,12 @@ public class StudentServiceImpl implements StudentService {
         Student student=new Student();
         student.setStudent_num(student_num);
         return studentMapper.findItem(student);
+    }
+
+    @Override
+    public void Studentupdate(Student student) {
+        System.out.println("Studentupdate"+student);
+        studentMapper.updateStudent(student);
     }
 
 }

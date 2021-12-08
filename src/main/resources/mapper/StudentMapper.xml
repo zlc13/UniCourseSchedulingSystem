@@ -21,14 +21,21 @@
         select * from student where student_num=#{student_num}
     </select>
 
+    <!--查找班级课表-->
     <select id="findCourse"  parameterType="Model.Student" resultType="Model.Bjks">
 
         select * from bjks_data where bj_nb=#{bj_nb}
     </select>
 
+    <!--查找班级上课地点-->
     <select id="findClasspot"  parameterType="Model.JS" resultType="Model.JS">
 
         select * from js_data where js_nb=#{js_nb}
+    </select>
+
+    <!--修改学生个人资料-->
+    <select id="updateStudent" parameterType="Model.Student">
+        update student set student_name=#{student_name},student_email=#{student_email},student_registration=#{student_registration} where student_num=#{student_num}
     </select>
 
 

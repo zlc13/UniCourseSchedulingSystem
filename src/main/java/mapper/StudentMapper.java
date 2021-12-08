@@ -20,5 +20,7 @@ public interface StudentMapper {
     public List<Bjks> findCourse(Student student);
     //教室详细信息
     public JS findClasspot(JS js);
+    //修改学生个人信息
+    public void updateStudent(Student student);
 
 }

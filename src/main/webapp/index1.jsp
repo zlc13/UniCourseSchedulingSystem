@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+
 <!DOCTYPE html>
 <html lang="en" class="loading">
 <!-- BEGIN : Head-->
@@ -75,17 +78,19 @@
         <div class="sidebar-content">
             <div class="nav-container">
                 <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true" class="navigation navigation-main">
-                    <li class=" nav-item"><a href="index.jsp"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
+                    <li class=" nav-item"><a href="index1.jsp"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
 
                     </li>
-                    <li class=" nav-item"><a href="#"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
+                    <li class=" nav-item"><a href="TeacherProfile"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人信息</span></a>
+                    </li>
+                    <li class=" nav-item"><a href="teachergrids"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
                     </li>
                     <li class=" nav-item"><a href="dt-api.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
                     </li>
 
-                    <li class=" nav-item"><a href="courseSpot.jsp"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">上课地点</span></a>
+                    <li class=" nav-item"><a href="TeachingcourseSpot"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">上课地点</span></a>
                     </li>
-                    <li class=" nav-item"><a href="TeachingClass.jsp"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">所教班级</span></a>
+                    <li class=" nav-item"><a href="TeachingClass"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">所教班级</span></a>
                     </li>
 
                 </ul>
@@ -113,7 +118,7 @@
                         <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;" class="nav-link apptogglefullscreen"><i class="ft-maximize font-medium-3 blue-grey darken-4"></i>
                             <p class="d-none">全屏</p>全屏</a></li>
                         <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown" class="nav-link position-relative "><i class="ft-user font-medium-3 blue-grey darken-4"></i>
-                            <p class="d-none">用户设置</p><%=account_num%>个人资料</a>
+                            <p class="d-none">用户设置</p>${Teacher.tr_nb}个人资料</a>
 
                         </li>
                         <li class="nav-item d-none d-lg-block"><a href="javascript:;" class="nav-link position-relative notification-sidebar-toggle"><i class="ft-align-left font-medium-3 blue-grey darken-4"></i>
@@ -268,7 +273,7 @@
                         <div id="chatapp" class="col-12">
                             <h6 class="mt-1 mb-3 text-bold-400">切换账号</h6>
                             <div class="collection border-none">
-                                <div class="media mb-1"><a href="signin.jsp"><img  alt="96x96" src="images/SwitchAccount.png" ></a>
+                                <div class="media mb-1"><a href="TeacherSignin.jsp"><img  alt="96x96" src="images/SwitchAccount.png" ></a>
                                     <div class="media-body">
                                         <div class="clearfix">
                                             <h4 class="font-medium-1 primary mt-1 mb-0 mr-auto float-left">状态</h4><span class="medium-small float-right blue-grey-text text-lighten-3">5.00 AM</span>

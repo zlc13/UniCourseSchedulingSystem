@@ -7,6 +7,24 @@ public class Teacher {
     private String tr_sex;
     private String tr_age;
     private String tr_password;
+    private String tr_entrydate;
+    private String tr_email;
+
+    public String getTr_entrydate() {
+        return tr_entrydate;
+    }
+
+    public void setTr_entrydate(String tr_entrydate) {
+        this.tr_entrydate = tr_entrydate;
+    }
+
+    public String getTr_email() {
+        return tr_email;
+    }
+
+    public void setTr_email(String tr_email) {
+        this.tr_email = tr_email;
+    }
 
     public String getTr_nb() {
         return tr_nb;
@@ -65,6 +83,8 @@ public class Teacher {
                 ", tr_sex='" + tr_sex + '\'' +
                 ", tr_age='" + tr_age + '\'' +
                 ", tr_password='" + tr_password + '\'' +
+                ", tr_entrydate='" + tr_entrydate + '\'' +
+                ", tr_email='" + tr_email + '\'' +
                 '}';
     }
 

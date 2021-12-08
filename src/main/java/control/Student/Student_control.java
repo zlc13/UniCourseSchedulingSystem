@@ -116,5 +116,29 @@ public class Student_control {
         modelAndView.setViewName("/userprofile");
         return modelAndView;
     }
+    //访问修改个人信息页面
+    @RequestMapping("/profile")
+    public ModelAndView profile(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
+        String student_num = (String) session.getAttribute("id");
+        System.out.println("userprofile controller,学生Id:"+student_num);
+        Student student = studentService.StudentId(student_num);
+        System.out.println(student);
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.addObject("studentdata",student);
+        modelAndView.setViewName("/pages_profile");
+        return modelAndView;
+    }
+    //修改后返回个人信息页面
+    @RequestMapping("updatesuccess")
+    public ModelAndView updatesuccess(HttpServletRequest request, HttpServletResponse response, HttpSession session,Student student) throws IOException{
+        System.out.println("updatesuccess"+student);
+        System.out.println(student);
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.addObject("studentdata",student);
+        studentService.Studentupdate(student);
+        modelAndView.setViewName("/userprofile");
+        return modelAndView;
+    }
+
 
 }

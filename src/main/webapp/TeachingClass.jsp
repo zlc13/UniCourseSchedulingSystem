@@ -64,17 +64,19 @@
         <div class="sidebar-content">
           <div class="nav-container">
             <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true" class="navigation navigation-main">
-              <li class=" nav-item"><a href="index.jsp"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
+              <li class=" nav-item"><a href="index1.jsp"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
 
               </li>
-              <li class=" nav-item"><a href="#"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
+              <li class=" nav-item"><a href="TeacherProfile"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人信息</span></a>
+              </li>
+              <li class=" nav-item"><a href="teachergrids"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
               </li>
               <li class=" nav-item"><a href="dt-api.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
               </li>
 
-              <li class=" nav-item"><a href="courseSpot.jsp"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">上课地点</span></a>
+              <li class=" nav-item"><a href="TeachingcourseSpot"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">上课地点</span></a>
               </li>
-              <li class=" nav-item"><a href="TeachingClass.jsp"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">所教班级</span></a>
+              <li class=" nav-item"><a href="TeachingClass"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">所教班级</span></a>
               </li>
 
             </ul>
@@ -130,196 +132,107 @@
                 <div class="col-md-3 col-12">
                   <h4 class="ml-2 mt-2 text-bold-500">大一🏌️‍♂️</h4>
                   <div class='dragdrop-container' id='drag-todos'>
-
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 primary float-left">21软件1班</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
+                    <c:forEach items="${bjList}" var="bj">
+                      <c:if test="${bj.bj_grade=='大一' }">
+                        <div class="card">
+                          <div class="card-body pt-3">
+                            <div class="clearfix">
+                              <h5 class="text-bold-500 primary float-left">${bj.bj_na}</h5>
+                              <div class="actions float-right">
+                                <i class="ft-edit mr-1 info"></i>
+                              </div>
+                            </div>
+                            <p>班级人数：${bj.bj_amount}</p>
+                            <img src="static/picture/avatar-s-7.png" class="rounded-circle width-50 mr-2">
+                            <span class="success">Aug 22</span>
                           </div>
                         </div>
-                        <p>专业</p>
-                        <img src="static/picture/avatar-s-3.png" class="rounded-circle width-50 mr-2">
-                        <span class="primary">May 17</span>
-                      </div>
-                    </div>
+                      </c:if>
+                    </c:forEach>
 
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 primary float-left">QA Testing</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
-                          </div>
-                        </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-3.png" class="rounded-circle width-50 mr-2">
-                        <span class="primary">June 17</span>
-                      </div>
-                    </div>
 
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 primary float-left">Budget</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
-                          </div>
-                        </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-3.png" class="rounded-circle width-50 mr-2">
-                        <span class="primary">May 27</span>
-                      </div>
-                    </div>
+
 
                   </div>
                 </div>
+
                 <div class="col-md-3 col-12">
                   <h4 class="ml-2 mt-2 text-bold-500">大二🚴‍♂️</h4>
                   <div class='dragdrop-container' id='drag-in-progress'>
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 info float-left">checklist</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
+                      <c:forEach items="${bjList}" var="bj">
+                        <c:if test="${bj.bj_grade=='大二' }">
+                          <div class="card">
+                            <div class="card-body pt-3">
+                              <div class="clearfix">
+                                <h5 class="text-bold-500 info float-left">${bj.bj_na}</h5>
+                                <div class="actions float-right">
+                                  <i class="ft-edit mr-1 info"></i>
+                                </div>
+                              </div>
+                              <p>班级人数：${bj.bj_amount}</p>
+                              <img src="static/picture/avatar-s-7.png" class="rounded-circle width-50 mr-2">
+                              <span class="success">Aug 22</span>
+                            </div>
                           </div>
-                        </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-1.png" class="rounded-circle width-50 mr-2">
-                        <span class="info">Apr 11</span>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 info float-left">checklist</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
-                          </div>
-                        </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-1.png" class="rounded-circle width-50 mr-2">
-                        <span class="info">Apr 11</span>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 info float-left">Navigation</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
-                          </div>
-                        </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-1.png" class="rounded-circle width-50 mr-2">
-                        <span class="info">Apr 11</span>
-                      </div>
-                    </div>
+                        </c:if>
+                      </c:forEach>
+
+
+
                   </div>
                 </div>
 
                 <div class="col-md-3 col-12">
                   <h4 class="ml-2 mt-2 text-bold-500">大三🏄‍♀️</h4>
                   <div class='dragdrop-container' id='drag-completed'>
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 success float-left">Angular 5</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
+
+                    <c:forEach items="${bjList}" var="bj">
+                      <c:if test="${bj.bj_grade=='大三' }">
+                        <div class="card">
+                          <div class="card-body pt-3">
+                            <div class="clearfix">
+                              <h5 class="text-bold-500 success float-left">${bj.bj_na}</h5>
+                              <div class="actions float-right">
+                                <i class="ft-edit mr-1 info"></i>
+                              </div>
+                            </div>
+                            <p>班级人数：${bj.bj_amount}</p>
+                            <img src="static/picture/avatar-s-7.png" class="rounded-circle width-50 mr-2">
+                            <span class="success">Aug 22</span>
                           </div>
                         </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-7.png" class="rounded-circle width-50 mr-2">
-                        <span class="success">Aug 22</span>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 success float-left">Fields</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
-                          </div>
-                        </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-7.png" class="rounded-circle width-50 mr-2">
-                        <span class="success">Aug 22</span>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 success float-left">Task board</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
-                          </div>
-                        </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-7.png" class="rounded-circle width-50 mr-2">
-                        <span class="success">Aug 22</span>
-                      </div>
-                    </div>
+                      </c:if>
+                    </c:forEach>
+
+
+
                   </div>
                 </div>
 
                 <div class="col-md-3 col-12">
                   <h4 class="ml-2 mt-2 text-bold-500">大四⛹🏼‍♀️</h4>
                   <div class='dragdrop-container' id='drag-on-hold'>
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 warning float-left">Assessment</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
+
+                    <c:forEach items="${bjList}" var="bj">
+                      <c:if test="${bj.bj_grade=='大四' }">
+                        <div class="card">
+                          <div class="card-body pt-3">
+                            <div class="clearfix">
+                              <h5 class="text-bold-500 warning float-left">${bj.bj_na}</h5>
+                              <div class="actions float-right">
+                                <i class="ft-edit mr-1 info"></i>
+                              </div>
+                            </div>
+                            <p>班级人数：${bj.bj_amount}</p>
+                            <img src="static/picture/avatar-s-7.png" class="rounded-circle width-50 mr-2">
+                            <span class="success">Aug 22</span>
                           </div>
                         </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-5.png" class="rounded-circle width-50 mr-2">
-                        <span class="warning">Jun 19</span>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 warning float-left">Schedule</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
-                          </div>
-                        </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-5.png" class="rounded-circle width-50 mr-2">
-                        <span class="warning">Jun 19</span>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-body pt-3">
-                        <div class="clearfix">
-                          <h5 class="text-bold-500 warning float-left">Unit tests</h5>
-                          <div class="actions float-right">
-                            <i class="ft-edit mr-1 info"></i>
-                            <i class="ft-trash-2 danger"></i>
-                          </div>
-                        </div>
-                        <p>Etiam porta sem malesuada magna mollis euismod.</p>
-                        <img src="static/picture/avatar-s-5.png" class="rounded-circle width-50 mr-2">
-                        <span class="warning">Jun 19</span>
-                      </div>
-                    </div>
+                      </c:if>
+                    </c:forEach>
+
                   </div>
+
                 </div>
               </div>
 
@@ -413,7 +326,7 @@
                         <div id="chatapp" class="col-12">
                           <h6 class="mt-1 mb-3 text-bold-400">切换账号</h6>
                           <div class="collection border-none">
-                            <div class="media mb-1"><a href="signin.jsp"><img  alt="96x96" src="images/SwitchAccount.png" ></a>
+                            <div class="media mb-1"><a href="TeacherSignin.jsp"><img  alt="96x96" src="images/SwitchAccount.png" ></a>
                               <div class="media-body">
                                 <div class="clearfix">
                                   <h4 class="font-medium-1 primary mt-1 mb-0 mr-auto float-left">状态</h4><span class="medium-small float-right blue-grey-text text-lighten-3">5.00 AM</span>

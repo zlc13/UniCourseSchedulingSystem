@@ -53,7 +53,7 @@
         <!-- Sidebar Header starts-->
         <div class="sidebar-header">
             <div class="logo clearfix"><a href="index.jsp" class="logo-text float-left">
-                <div class="logo-img"><img  width="30px" height="30px" src="images/Course.png"></div><span class="text align-middle">学生端</span></a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i data-toggle="expanded" class="toggle-icon ft-toggle-left"></i></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-x"></i></a></div>
+                <div class="logo-img"><img  width="30px" height="30px" src="images/Teacher.png"></div><span class="text align-middle">教师端</span></a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i data-toggle="expanded" class="toggle-icon ft-toggle-left"></i></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-x"></i></a></div>
         </div>
         <!-- Sidebar Header Ends-->
         <!-- / main menu header-->
@@ -61,17 +61,19 @@
         <div class="sidebar-content">
             <div class="nav-container">
                 <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true" class="navigation navigation-main">
-                    <li class=" nav-item"><a href="index.jsp"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
+                    <li class=" nav-item"><a href="index1.jsp"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
 
                     </li>
-                    <li class=" nav-item"><a href="grids"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
+                    <li class=" nav-item"><a href="TeacherProfile"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人信息</span></a>
+                    </li>
+                    <li class=" nav-item"><a href="teachergrids"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
                     </li>
                     <li class=" nav-item"><a href="dt-api.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
                     </li>
 
-                    <li class=" nav-item"><a href="courseSpot.jsp"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">上课地点</span></a>
+                    <li class=" nav-item"><a href="TeachingcourseSpot"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">上课地点</span></a>
                     </li>
-                    <li class=" nav-item"><a href="userprofile.jsp"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">个人信息修改</span></a>
+                    <li class=" nav-item"><a href="TeachingClass"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">所教班级</span></a>
                     </li>
 
                 </ul>
@@ -99,7 +101,7 @@
                         <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;" class="nav-link apptogglefullscreen"><i class="ft-maximize font-medium-3 blue-grey darken-4"></i>
                             <p class="d-none">全屏</p>全屏</a></li>
                         <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown" class="nav-link position-relative "><i class="ft-user font-medium-3 blue-grey darken-4"></i>
-                            <p class="d-none">用户设置</p><%=id%>个人资料</a>
+                            <p class="d-none">用户设置</p>${Teacher.tr_nb}个人资料</a>
 
                         </li>
                         <li class="nav-item d-none d-lg-block"><a href="javascript:;" class="nav-link position-relative notification-sidebar-toggle"><i class="ft-align-left font-medium-3 blue-grey darken-4"></i>
@@ -166,7 +168,7 @@
                                         <div class="col-lg-5 col-md-5">
                                             <ul class="profile-menu no-list-style">
                                                 <li>
-                                                    <a href="/profile" class="primary font-medium-2 font-weight-600">修改资料</a>
+                                                    <a href="TeacherUpdate" class="primary font-medium-2 font-weight-600">修改资料</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -205,23 +207,23 @@
                                                 <ul class="no-list-style">
                                                     <li class="mb-2">
                                                         <span class="text-bold-500 primary"><a><i class="icon-present font-small-3"></i> 姓 名:</a></span>
-                                                        <span class="d-block overflow-hidden">${studentdata.student_name}</span>
+                                                        <span class="d-block overflow-hidden">${Teacher.tr_na}</span>
                                                     </li>
                                                     <li class="mb-2">
-                                                        <span class="text-bold-500 primary"><a><i class="ft-map-pin font-small-3"></i> 户籍所在地:</a></span>
-                                                        <span class="d-block overflow-hidden">${studentdata.student_registration}</span>
+                                                        <span class="text-bold-500 primary"><a><i class="ft-map-pin font-small-3"></i> 性 别:</a></span>
+                                                        <span class="d-block overflow-hidden">${Teacher.tr_sex}</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="col-12 col-md-6 col-lg-4">
                                                 <ul class="no-list-style">
                                                     <li class="mb-2">
-                                                        <span class="text-bold-500 primary"><a><i class="ft-user font-small-3"></i> 学 号:</a></span>
-                                                        <span class="d-block overflow-hidden">${studentdata.student_num}</span>
+                                                        <span class="text-bold-500 primary"><a><i class="ft-user font-small-3"></i> 编 号:</a></span>
+                                                        <span class="d-block overflow-hidden">${Teacher.tr_nb}</span>
                                                     </li>
                                                     <li class="mb-2">
-                                                        <span class="text-bold-500 primary"><a><i class="ft-mail font-small-3"></i> 邮箱:</a></span>
-                                                        <a class="d-block overflow-hidden">${studentdata.student_email}</a>
+                                                        <span class="text-bold-500 primary"><a><i class="ft-mail font-small-3"></i> 邮 箱:</a></span>
+                                                        <a class="d-block overflow-hidden">${Teacher.tr_email}</a>
                                                     </li>
 
                                                 </ul>
@@ -229,12 +231,12 @@
                                             <div class="col-12 col-md-6 col-lg-4">
                                                 <ul class="no-list-style">
                                                     <li class="mb-2">
-                                                        <span class="text-bold-500 primary"><a><i class="ft-smartphone font-small-3"></i> 专 业:</a></span>
-                                                        <span class="d-block overflow-hidden">${studentdata.major}</span>
+                                                        <span class="text-bold-500 primary"><a><i class="ft-smartphone font-small-3"></i> 职 位:</a></span>
+                                                        <span class="d-block overflow-hidden">${Teacher.tr_pt}</span>
                                                     </li>
                                                     <li class="mb-2">
-                                                        <span class="text-bold-500 primary"><a><i class="ft-briefcase font-small-3"></i> 院 系:</a></span>
-                                                        <span class="d-block overflow-hidden">${studentdata.student_academy}</span>
+                                                        <span class="text-bold-500 primary"><a><i class="ft-briefcase font-small-3"></i> 入职日期:</a></span>
+                                                        <span class="d-block overflow-hidden">${Teacher.tr_entrydate}</span>
                                                     </li>
                                                 </ul>
                                             </div>
