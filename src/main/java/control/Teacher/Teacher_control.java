@@ -131,4 +131,20 @@ public class Teacher_control {
         return modelAndView;
     }
 
+    //修改后返回个人信息页面
+    @RequestMapping("/classinfo")
+    public ModelAndView classinfo(String bj_nb,HttpServletRequest request, HttpServletResponse response) throws IOException{
+        System.out.println("classinfo"+bj_nb);
+
+        List<Student> studentList=teacherService.ClassInfo(bj_nb);
+
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.addObject("studentList",studentList);
+        System.out.println(studentList+"学生合集");
+        modelAndView.setViewName("/TeachingClassInfo");
+        return modelAndView;
+    }
+
+
+
 }

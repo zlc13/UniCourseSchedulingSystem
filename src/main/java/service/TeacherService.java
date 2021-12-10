@@ -1,10 +1,7 @@
 package service;
 
 
-import Model.BJ;
-import Model.JS;
-import Model.Teacher;
-import Model.Trjs;
+import Model.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,6 +19,9 @@ public interface TeacherService {
     public Teacher ThroughIdTeacher(String tr_nb);
     //更新教师资料
     public void Teacherupdate(Teacher teacher);
+    //查看所教班级详细信息
+    public List<Student> ClassInfo(String bj_nb ) throws IOException;
+
 
 
 }

@@ -43,4 +43,11 @@
     <select id="updateTeacher" parameterType="Model.Teacher">
         update tr_data set tr_email=#{tr_email},tr_entrydate=#{tr_entrydate} where tr_nb=#{tr_nb}
     </select>
+
+    <!--查找教课班级信息-->
+    <select id="findClassinfo" parameterType="Model.BJ" resultType="Model.Student">
+
+        select * from student where bj_nb=#{bj_nb}
+    </select>
+
 </mapper>

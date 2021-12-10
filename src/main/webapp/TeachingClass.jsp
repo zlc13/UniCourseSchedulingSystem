@@ -67,11 +67,11 @@
               <li class=" nav-item"><a href="index1.jsp"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
 
               </li>
-              <li class=" nav-item"><a href="TeacherProfile"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人信息</span></a>
+              <li class=" nav-item"><a href="TeacherProfile"><i class="ft-check-square"></i><span data-i18n="" class="menu-title">个人信息</span></a>
               </li>
               <li class=" nav-item"><a href="teachergrids"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
               </li>
-              <li class=" nav-item"><a href="dt-api.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
+              <li class=" nav-item"><a href="TeachingClassInfo.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
               </li>
 
               <li class=" nav-item"><a href="TeachingcourseSpot"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">上课地点</span></a>
@@ -134,19 +134,23 @@
                   <div class='dragdrop-container' id='drag-todos'>
                     <c:forEach items="${bjList}" var="bj">
                       <c:if test="${bj.bj_grade=='大一' }">
+                      <form  class="site-form" action="/classinfo" method="get">
+                        <input type="hidden" name="bj_nb"  value="${bj.bj_nb}">
                         <div class="card">
                           <div class="card-body pt-3">
                             <div class="clearfix">
                               <h5 class="text-bold-500 primary float-left">${bj.bj_na}</h5>
                               <div class="actions float-right">
                                 <i class="ft-edit mr-1 info"></i>
+                                <button  class="btn btn-primary mb-2" type="submit"> 查看班级详细信息</button>
                               </div>
                             </div>
                             <p>班级人数：${bj.bj_amount}</p>
                             <img src="static/picture/avatar-s-7.png" class="rounded-circle width-50 mr-2">
-                            <span class="success">Aug 22</span>
+                            <span class="success"></span>
                           </div>
                         </div>
+                      </form>
                       </c:if>
                     </c:forEach>
 
@@ -161,12 +165,16 @@
                   <div class='dragdrop-container' id='drag-in-progress'>
                       <c:forEach items="${bjList}" var="bj">
                         <c:if test="${bj.bj_grade=='大二' }">
+                        <form  class="site-form" action="/classinfo" method="get">
+                          <input type="hidden" name="bj_nb"  value="${bj.bj_nb}">
                           <div class="card">
                             <div class="card-body pt-3">
                               <div class="clearfix">
                                 <h5 class="text-bold-500 info float-left">${bj.bj_na}</h5>
                                 <div class="actions float-right">
                                   <i class="ft-edit mr-1 info"></i>
+                                  <button  class="btn btn-primary mb-2" type="submit">查看班级详细信息</button>
+
                                 </div>
                               </div>
                               <p>班级人数：${bj.bj_amount}</p>
@@ -174,6 +182,7 @@
                               <span class="success">Aug 22</span>
                             </div>
                           </div>
+                        </form>
                         </c:if>
                       </c:forEach>
 
@@ -188,12 +197,16 @@
 
                     <c:forEach items="${bjList}" var="bj">
                       <c:if test="${bj.bj_grade=='大三' }">
+                      <form  class="site-form" action="/classinfo" method="get">
+                        <input type="hidden" name="bj_nb"  value="${bj.bj_nb}">
                         <div class="card">
                           <div class="card-body pt-3">
                             <div class="clearfix">
                               <h5 class="text-bold-500 success float-left">${bj.bj_na}</h5>
                               <div class="actions float-right">
                                 <i class="ft-edit mr-1 info"></i>
+                                <button  class="btn btn-primary mb-2" type="submit"> 查看班级详细信息</button>
+
                               </div>
                             </div>
                             <p>班级人数：${bj.bj_amount}</p>
@@ -201,6 +214,7 @@
                             <span class="success">Aug 22</span>
                           </div>
                         </div>
+                      </form>
                       </c:if>
                     </c:forEach>
 
@@ -215,12 +229,15 @@
 
                     <c:forEach items="${bjList}" var="bj">
                       <c:if test="${bj.bj_grade=='大四' }">
+                      <form  class="site-form" action="/classinfo" method="get">
+                        <input type="hidden" name="bj_nb"  value="${bj.bj_nb}">
                         <div class="card">
                           <div class="card-body pt-3">
                             <div class="clearfix">
                               <h5 class="text-bold-500 warning float-left">${bj.bj_na}</h5>
                               <div class="actions float-right">
                                 <i class="ft-edit mr-1 info"></i>
+                                <button  class="btn btn-primary mb-2" type="submit">查看班级详细信息</button>
                               </div>
                             </div>
                             <p>班级人数：${bj.bj_amount}</p>
@@ -228,6 +245,7 @@
                             <span class="success">Aug 22</span>
                           </div>
                         </div>
+                      </form>
                       </c:if>
                     </c:forEach>
 

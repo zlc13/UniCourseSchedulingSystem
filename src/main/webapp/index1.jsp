@@ -81,11 +81,11 @@
                     <li class=" nav-item"><a href="index1.jsp"><i class="ft-home"></i><span data-i18n="" class="menu-title">主页</span></a>
 
                     </li>
-                    <li class=" nav-item"><a href="TeacherProfile"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人信息</span></a>
+                    <li class=" nav-item"><a href="TeacherProfile"><i class="ft-check-square"></i><span data-i18n="" class="menu-title">个人信息</span></a>
                     </li>
                     <li class=" nav-item"><a href="teachergrids"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">个人课表</span></a>
                     </li>
-                    <li class=" nav-item"><a href="dt-api.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
+                    <li class=" nav-item"><a href="TeachingClassInfo.jsp"><i class="ft-mail"></i><span data-i18n="" class="menu-title">班级情况</span></a>
                     </li>
 
                     <li class=" nav-item"><a href="TeachingcourseSpot"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">上课地点</span></a>

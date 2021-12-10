@@ -21,6 +21,11 @@
     <bean id="teacherService" class="service.impl.TeacherServiceImpl">
         <!--                <property name="studentMapper" ref="studentMapper"/>-->
     </bean>
+
+    <!--配置AdminService-->
+    <bean id="adminService" class="service.impl.AdminServiceImpl">
+        <!--                <property name="studentMapper" ref="studentMapper"/>-->
+    </bean>
 <!--   &lt;!&ndash;配置StudentDao&ndash;&gt;-->
 <!--    <bean id="studentDao" class="Dao.impl.StudentDaoImpl">-->
 <!--        -->

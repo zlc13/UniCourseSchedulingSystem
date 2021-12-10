@@ -72,5 +72,16 @@ public class TeacherServiceImpl implements TeacherService {
     public void Teacherupdate(Teacher teacher) {
         teacherMapper.updateTeacher(teacher);
     }
+
+    @Override
+    public List<Student> ClassInfo(String bj_nb) throws IOException {
+
+        BJ bj=new BJ();
+        bj.setBj_nb(bj_nb);
+
+        List<Student> studentList= teacherMapper.findClassinfo(bj);
+
+        return studentList;
+    }
 }
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.AdminMapper">
+    <!--查找所有班级-->
+    <select id="findAllClass"  resultType="Model.BJ">
+
+        select * from bj_data
+    </select>
+
+    <!--查找该班级课程情况-->
+    <select id="findAllClassTime"   resultType="Model.Bjks">
+
+        select * from bjks_data
+    </select>
+
+    <!--查找所有教室情况-->
+    <select id="findAllJS"   resultType="Model.JS">
+
+        select * from js_data
+    </select>
+
+    <!--自动排课插入-->
+    <select id="updateCourse" parameterType="Model.Bjks">
+        update bjks_data set day=#{day},time=#{time},js_nb=#{js_nb}where bjks_nb=#{bjks_nb}
+    </select>
+
+
+
+</mapper>
