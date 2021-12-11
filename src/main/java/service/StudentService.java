@@ -18,7 +18,7 @@ public interface StudentService {
     //查询课表
     public List<Bjks> FindClass(String student_num ) throws IOException;
     //查询教室信息
-    public JS FindClasspot(String js_nb ) throws IOException;
+    public JS FindClasspot(int js_nb ) throws IOException;
     //查询学生详细信息
     public Student StudentId(String student_num);
     //修改学生信息

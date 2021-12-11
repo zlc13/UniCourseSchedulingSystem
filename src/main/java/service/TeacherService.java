@@ -14,7 +14,7 @@ public interface TeacherService {
     //查询教师授课数据
     public List<Trjs> CourseByTeacher (String tr_nb) throws IOException;
     //查询教室信息
-    public JS FindClasspot(String js_nb ) throws IOException;
+    public JS FindClasspot(int js_nb ) throws IOException;
     //通过Id查询教师
     public Teacher ThroughIdTeacher(String tr_nb);
     //更新教师资料

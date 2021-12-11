@@ -7,6 +7,7 @@ import mapper.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.StudentService;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class StudentServiceImpl implements StudentService {
         Student student1 = new Student();
         student1.setStudent_num(student_num);
         student1.setPassword(password);
-        Student student=studentMapper.findStu(student1);
+        Student student = studentMapper.findStu(student1);
 //        Student student=studentDao.LgUserItem(student_num,password);
         return student;
 
@@ -32,12 +33,12 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> ClassUserItem(String student_num) throws IOException {
 
-        Student student=new Student();
+        Student student = new Student();
         student.setStudent_num(student_num);
 
-        Student student1=studentMapper.findItem(student);
+        Student student1 = studentMapper.findItem(student);
 
-        System.out.println("impl"+student);
+        System.out.println("impl" + student);
         List<Student> studentList = studentMapper.findClass(student1);
 
         return studentList;
@@ -47,9 +48,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Bjks> FindClass(String student_num) throws IOException {
 
-        Student student=new Student();
+        Student student = new Student();
         student.setStudent_num(student_num);
-        Student student1=studentMapper.findItem(student);
+        Student student1 = studentMapper.findItem(student);
 
         List<Bjks> bjksList = studentMapper.findCourse(student1);
 
@@ -58,23 +59,24 @@ public class StudentServiceImpl implements StudentService {
 
     //找上课地点
     @Override
-    public JS FindClasspot(String js_nb) throws IOException {
-        JS js=new JS();
+    public JS FindClasspot(int js_nb) throws IOException {
+        JS js = new JS();
+
         js.setJs_nb(js_nb);
-        JS js1=studentMapper.findClasspot(js);
+        JS js1 = studentMapper.findClasspot(js);
         return js1;
     }
 
     @Override
     public Student StudentId(String student_num) {
-        Student student=new Student();
+        Student student = new Student();
         student.setStudent_num(student_num);
         return studentMapper.findItem(student);
     }
 
     @Override
     public void Studentupdate(Student student) {
-        System.out.println("Studentupdate"+student);
+        System.out.println("Studentupdate" + student);
         studentMapper.updateStudent(student);
     }
 

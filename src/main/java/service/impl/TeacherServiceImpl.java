@@ -52,7 +52,7 @@ public class TeacherServiceImpl implements TeacherService {
         }
 
     @Override
-    public JS FindClasspot(String js_nb) throws IOException {
+    public JS FindClasspot(int js_nb) throws IOException {
         JS js=new JS();
         js.setJs_nb(js_nb);
         JS js1=teacherMapper.findClasspot(js);

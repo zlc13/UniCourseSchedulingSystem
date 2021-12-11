@@ -78,6 +78,7 @@ public class Student_control {
         List<JS> jsList = new ArrayList<JS>();
         for(Bjks value:bjksList) {
             JS js=studentService.FindClasspot(value.getJs_nb());
+            System.out.println(js);
 //            System.out.println(js.getJs_name()+"遍历地点");
             value.setJs_name(js.getJs_name());
 //            System.out.println(value+"课");

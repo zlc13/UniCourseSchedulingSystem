@@ -2,13 +2,13 @@ package Model;
 
 public class Trjs {
     private String tr_nb;
-    private String js_nb;
+    private int js_nb;
     private String c_nb;
     private String c_na;
     private String time;
     private String day;
     private String bj_nb;
-    private String trbjks_nb;
+    private String trjs_nb;
     private String js_name;
     private String bj_name;
 
@@ -20,11 +20,11 @@ public class Trjs {
         this.tr_nb = tr_nb;
     }
 
-    public String getJs_nb() {
+    public int getJs_nb() {
         return js_nb;
     }
 
-    public void setJs_nb(String js_nb) {
+    public void setJs_nb(int js_nb) {
         this.js_nb = js_nb;
     }
 
@@ -68,12 +68,12 @@ public class Trjs {
         this.bj_nb = bj_nb;
     }
 
-    public String getTrbjks_nb() {
-        return trbjks_nb;
+    public String getTrjs_nb() {
+        return trjs_nb;
     }
 
-    public void setTrbjks_nb(String trbjks_nb) {
-        this.trbjks_nb = trbjks_nb;
+    public void setTrjs_nb(String trjs_nb) {
+        this.trjs_nb = trjs_nb;
     }
 
     public String getJs_name() {
@@ -96,13 +96,13 @@ public class Trjs {
     public String toString() {
         return "Trjs{" +
                 "tr_nb='" + tr_nb + '\'' +
-                ", js_nb='" + js_nb + '\'' +
+                ", js_nb=" + js_nb +
                 ", c_nb='" + c_nb + '\'' +
                 ", c_na='" + c_na + '\'' +
                 ", time='" + time + '\'' +
                 ", day='" + day + '\'' +
                 ", bj_nb='" + bj_nb + '\'' +
-                ", trbjks_nb='" + trbjks_nb + '\'' +
+                ", trjs_nb='" + trjs_nb + '\'' +
                 ", js_name='" + js_name + '\'' +
                 ", bj_name='" + bj_name + '\'' +
                 '}';

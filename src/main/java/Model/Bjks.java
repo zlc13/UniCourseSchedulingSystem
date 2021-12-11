@@ -5,7 +5,7 @@ public class Bjks {
     private String c_nb;
     private String time;
     private String tr_nb;
-    private String js_nb;
+    private int js_nb;
     private String bjks_nb;
     private String day;
     private String js_name;
@@ -59,11 +59,11 @@ public class Bjks {
         this.tr_nb = tr_nb;
     }
 
-    public String getJs_nb() {
+    public int getJs_nb() {
         return js_nb;
     }
 
-    public void setJs_nb(String js_nb) {
+    public void setJs_nb(int js_nb) {
         this.js_nb = js_nb;
     }
 
@@ -90,7 +90,7 @@ public class Bjks {
                 ", c_nb='" + c_nb + '\'' +
                 ", time='" + time + '\'' +
                 ", tr_nb='" + tr_nb + '\'' +
-                ", js_nb='" + js_nb + '\'' +
+                ", js_nb=" + js_nb +
                 ", bjks_nb='" + bjks_nb + '\'' +
                 ", day='" + day + '\'' +
                 ", js_name='" + js_name + '\'' +

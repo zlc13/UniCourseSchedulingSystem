@@ -22,7 +22,69 @@
 
     <!--自动排课插入-->
     <select id="updateCourse" parameterType="Model.Bjks">
-        update bjks_data set day=#{day},time=#{time},js_nb=#{js_nb}where bjks_nb=#{bjks_nb}
+        update bjks_data set `day`=#{day},`time`=#{time},js_nb=#{js_nb} where bjks_nb=#{bjks_nb}
+    </select>
+
+    <!--自动排课插入-->
+    <select id="findAdmin" parameterType="Model.Admin" resultType="Model.Admin">
+        select * from admin where admin_num=#{admin_num} and admin_password=#{admin_password}
+    </select>
+
+    <!--查找所有教室信息-->
+    <select id=" AllJs" resultType="Model.JsStatus">
+        select * from js_status
+    </select>
+
+    <!--通过教室名查找教室信息-->
+    <select id="IdJsStatus"  parameterType="Model.JsStatus" resultType="Model.JsStatus">
+
+        select * from js_status where js_name=#{js_name}
+    </select>
+
+    <!--通过day和time查找教室信息-->
+    <select id="DayandTimeJsStatus"  parameterType="Model.JsStatus" resultType="Model.JsStatus">
+
+        select * from js_status where day=#{day} and time=#{time} and js_name=#{js_name}
+    </select>
+
+    <select id="FindAllJs"  resultType="Model.JsStatus">
+
+        select * from js_status
+    </select>
+
+    <!--插入学生课表信息-->
+    <select id="InsertBjks" parameterType="Model.Bjks">
+        insert into bjks_data values(#{bj_nb},#{c_nb},#{time},#{tr_nb},#{js_nb},#{bjks_nb},#{day},#{js_name},#{c_na})
+    </select>
+
+    <!--插入老师课表信息-->
+    <select id="InsertTrks" parameterType="Model.Trjs">
+        insert into trjs_data values(#{tr_nb},#{js_nb},#{c_nb},#{c_na},#{time},#{day},#{bj_nb},#{trjs_nb},#{js_name},#{bj_name})
+    </select>
+
+    <!--修改教室状态-->
+    <select id="updateJsStatus" parameterType="Model.JsStatus">
+        update js_status set status=#{status} where js_nb=#{js_nb} and day=#{day} and time=#{time}
+    </select>
+
+    <!--添加学生-->
+    <select id="AddStudent" parameterType="Model.Student">
+        insert into student values(#{student_num},#{password},#{bj_nb},#{bj_na},#{major},#{grade},#{student_name},#{student_email},#{student_academy},#{student_registration})
+    </select>
+
+    <!--添加教师-->
+    <select id="AddTeacher" parameterType="Model.Teacher">
+        insert into tr_data values(#{tr_nb},#{tr_na},#{tr_pt},#{tr_sex},#{tr_age},#{tr_password},#{tr_entrydate},#{tr_email})
+    </select>
+
+    <!--添加班级-->
+    <select id="AddBjData" parameterType="Model.BjData">
+        insert into bj_data values(#{bj_nb},#{bj_na},#{bj_amount},#{bj_grade})
+    </select>
+
+    <!--添加教室-->
+    <select id="AddJsDta" parameterType="Model.JS">
+        insert into js_data values(#{js_nb},#{js_se},#{js_pt},#{js_name})
     </select>
 
 

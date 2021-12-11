@@ -1,9 +1,7 @@
 package control.Admin;
 
 
-import Model.BJ;
-import Model.Bjks;
-import Model.Student;
+import Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +19,31 @@ import java.util.List;
 public class Admin_Control {
     @Autowired
     private AdminService adminService;
+
+
+    //加载登录是否符合规范
+    @RequestMapping("/adminlogin")
+    public String Adminaccount(String admin_num, String admin_password ,HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+
+        System.out.println("进入方法了");
+        req.setCharacterEncoding("utf-8");
+        System.out.println(admin_num+admin_password);
+        Admin admin=adminService.LgUserItem(admin_num, admin_password);
+
+
+        if(admin!=null){
+            System.out.println("进入方法了");
+            resp.setContentType("text/html;charset=utf-8");
+
+            req.setAttribute("account_num",admin_num);
+//            req.getRequestDispatcher("/servlet_head").forward(req,resp);
+            return "adminIndex";
+        }else{
+            req.setAttribute("data","1");
+//
+            return "adminSignin";
+        }
+    }
 
     @RequestMapping("/wizard-forms")
     public ModelAndView wizardforms(String grade,String banji,  HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -58,6 +81,130 @@ public class Admin_Control {
 
         modelAndView.setViewName("dt-api");
 
+        return modelAndView;
+    }
+
+    //访问所有教室信息
+    @RequestMapping("/JsData")
+    public ModelAndView JsData(){
+        ModelAndView modelAndView = new ModelAndView();
+        List<JsStatus> jsStatusList = adminService.FindAllJsStatus();
+        modelAndView.addObject("jslist",jsStatusList);
+        modelAndView.setViewName("app-contact");
+        return modelAndView;
+    }
+
+    //插入教室
+    @RequestMapping("/SearchJsData")
+    public ModelAndView SearchJsData(Bjks bjks, Trjs trjs,JsStatus jsStatus){
+        ModelAndView modelAndView = new ModelAndView();
+        List<JsStatus> jsStatusList = adminService.FindAllJsStatus();
+        List<JsStatus> AddjsStatusList=adminService.FindDayandTimeJs(jsStatus.getDay(),jsStatus.getTime(), jsStatus.getJs_name());
+        System.out.println("Addjs"+" "+AddjsStatusList);
+        int js_nb=0;
+        if(AddjsStatusList.size()==0){
+            js_nb=0;
+            modelAndView.addObject("jslist",jsStatusList);
+            modelAndView.addObject("result","nono");
+            modelAndView.setViewName("app-contact");
+            return modelAndView;
+        }else{
+            if(AddjsStatusList.get(0).getStatus().equals("false")){
+                modelAndView.addObject("jslist",jsStatusList);
+                modelAndView.addObject("result","false");
+                modelAndView.setViewName("app-contact");
+                return modelAndView;
+            }else{
+                js_nb=AddjsStatusList.get(0).getJs_nb();
+                jsStatus=AddjsStatusList.get(0);
+                bjks.setJs_nb(js_nb);
+                trjs.setJs_nb(js_nb);
+                System.out.println("Bjks"+" "+bjks);
+                System.out.println("Trjs"+" "+trjs);
+                System.out.println("JsStatus"+" "+jsStatus);
+                jsStatus.setStatus("false");
+                adminService.InsertintoStudent(bjks);
+                adminService.InsertintoTeacher(trjs);
+                adminService.JsStatusupdate(jsStatus);
+                modelAndView.addObject("jslist",jsStatusList);
+                modelAndView.addObject("result","true");
+                modelAndView.setViewName("app-contact");
+                return modelAndView;
+            }
+        }
+    }
+
+/*    //访问增加学生课表页面
+    @RequestMapping("/BjksInsert")
+    public ModelAndView BjksInsert(JsStatus jsStatus){
+        ModelAndView modelAndView = new ModelAndView();
+        System.out.println(jsStatus.getJs_nb()+" "+jsStatus.getJs_name()+" "+jsStatus.getDay()+" "+jsStatus.getTime());
+        modelAndView.addObject("Bjksdata",jsStatus);
+        modelAndView.setViewName("AddBjks");
+        return modelAndView;
+    }*/
+
+    //插入课表成功
+    @RequestMapping("/successbjks")
+    public ModelAndView successbjks(Bjks bjks, Trjs trjs,JsStatus jsStatus){
+        ModelAndView modelAndView = new ModelAndView();
+        System.out.println("successbjks"+" "+bjks);
+        System.out.println("successtrks"+" "+trjs);
+        System.out.println("successjsStatus"+" "+jsStatus);
+        jsStatus.setStatus("false");
+        adminService.InsertintoStudent(bjks);
+        adminService.InsertintoTeacher(trjs);
+        adminService.JsStatusupdate(jsStatus);
+        List<JsStatus> jsStatusList = adminService.FindAllJsStatus();
+        modelAndView.addObject("jslist",jsStatusList);
+        modelAndView.setViewName("app-contact");
+        return modelAndView;
+    }
+
+    //添加学生
+    @RequestMapping("/AddStudentSuccess")
+    public ModelAndView AddStudent(Student student){
+        ModelAndView modelAndView = new ModelAndView();
+        adminService.AddStudentData(student);
+        modelAndView.setViewName("AddStudent");
+        return modelAndView;
+    }
+
+    //添加教师
+    @RequestMapping("/AddTeacherSuccess")
+    public ModelAndView AddSTeacher(Teacher teacher){
+        ModelAndView modelAndView = new ModelAndView();
+        adminService.AddTeachertData(teacher);
+        modelAndView.setViewName("AddTeacher");
+        return modelAndView;
+    }
+
+    //添加班级
+    @RequestMapping("/AddBjSuccess")
+    public ModelAndView AddBjData(BjData bjData){
+        ModelAndView modelAndView = new ModelAndView();
+        adminService.AddClass(bjData);
+        modelAndView.setViewName("AddBjData");
+        return modelAndView;
+    }
+
+    //添加教室
+    @RequestMapping("/AddJsSuccess")
+    public ModelAndView AddJsData(JS js){
+        ModelAndView modelAndView = new ModelAndView();
+        adminService.AddDataJs(js);
+        modelAndView.setViewName("AddJsData");
+        return modelAndView;
+    }
+
+    //通过查询教室显示所有课时这间教室状态
+    @RequestMapping("/SearchJs")
+    public ModelAndView SearchJs(String js_name){
+        ModelAndView modelAndView = new ModelAndView();
+        List<JsStatus> jsStatusList = adminService.FindIdJsStatus(js_name);
+        System.out.println("SearchJs:"+jsStatusList);
+        modelAndView.addObject("jslist",jsStatusList);
+        modelAndView.setViewName("JsGrids");
         return modelAndView;
     }
 }

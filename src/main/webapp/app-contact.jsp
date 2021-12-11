@@ -32,16 +32,39 @@
     </style>
 </head>
 <body class="theme-blue">
-
+<c:if test="${result=='nono' }">
+    <script type="text/javascript">
+        alert("暂无此教室");
+    </script>
+</c:if>
+<c:if test="${result=='false' }">
+    <script type="text/javascript">
+            alert("教室已被使用");
+    </script>
+</c:if>
+<c:if test="${result=='true' }">
+    <script type="text/javascript">
+        alert("添加成功");
+    </script>
+</c:if>
 <!-- Page Loader -->
 <div class="container-fluid">
 
     <div class="col-md-6 col-sm-12">
             <form action="SearchJsData" method="get">
-                <input type="text" placeholder="Day" name="day" >
-                <input type="text" placeholder="Class Hour" name="time">
-                <input type="text" placeholder="Classroom Name" name="js_name">
-                <button type="submit" class="btn btn-primary">搜索</button>
+                <input type="text" placeholder="星期" name="day" >
+                <input type="text" placeholder="课节" name="time">
+                <input type="text" placeholder="教室名" name="js_name">
+                <br/>
+                <input type="text" placeholder="班级课时编号" name="bjks_nb" >
+                <input type="text" placeholder="教师课时编号" name="trjs_nb">
+                <input type="text" placeholder="班级编号" name="bj_nb">
+                <br/>
+                <input type="text" placeholder="班级名" name="bj_name" >
+                <input type="text" placeholder="教师编号" name="tr_nb">
+                <input type="text" placeholder="课程编号" name="c_nb">
+                <input type="text" placeholder="课程名称" name="c_na">
+                <button type="submit" class="btn btn-primary">添加</button>
             </form>
     </div>
     <%--<div class="col-md-6 col-sm-12 text-right hidden-xs">

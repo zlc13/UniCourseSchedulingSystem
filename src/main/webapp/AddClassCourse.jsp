@@ -6,7 +6,7 @@
 <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>添加班级 </title>
+<title>添加教室 </title>
     <link rel="icon" href="favicon.ico" type="image/ico">
     <meta name="keywords" content="后台模板,后台管理系统,HTML模板">
     <meta name="description" content="基于Bootstrap的后台管理系统模板">
@@ -63,22 +63,22 @@
                   <img src="picture/xmlg.png" alt="..." class="img-avatar">
                 </div>
                 <hr>
-                <form  class="site-form" action="AddBjSuccess" method="get">
+                <form  class="site-form" action="AddJsSuccess" method="get">
                     <div class="form-group">
                     <label >班级编号</label>
                     <input type="text" name="bj_nb" class="form-control"  value=""/>
                   </div>
                   <div class="form-group">
-                    <label >班级名</label>
-                    <input type="text" name="bj_na" class="form-control" placeholder="" value="" >
+                    <label >课程名</label>
+                    <input type="text" name="c_na" class="form-control" placeholder="" value="" >
                   </div>
                     <div class="form-group">
-                        <label >班级人数</label>
-                        <input type="text" name="bj_amount" class="form-control" placeholder="" value="" >
+                        <label >任课老师</label>
+                        <input type="text" name="tr_nb" class="form-control" placeholder="" value="" >
                     </div>
                     <div class="form-group">
-                        <label >年级</label>
-                        <input type="text" name="bj_grade" class="form-control" placeholder="" value="" >
+                        <label >课时编号</label>
+                        <input type="text" name="bjks_nb" class="form-control" placeholder="" value="">
                     </div>
                   <button type="submit" class="btn btn-primary" onclick="clickmsg()">保存</button>
                 </form>

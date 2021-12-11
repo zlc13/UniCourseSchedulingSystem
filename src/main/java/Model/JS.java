@@ -1,16 +1,16 @@
 package Model;
 
 public class JS {
-    private  String js_nb;
+    private  int js_nb;
     private  String js_se;
     private  String js_pt;
     private  String js_name;
 
-    public String getJs_nb() {
+    public int getJs_nb() {
         return js_nb;
     }
 
-    public void setJs_nb(String js_nb) {
+    public void setJs_nb(int js_nb) {
         this.js_nb = js_nb;
     }
 
@@ -41,7 +41,7 @@ public class JS {
     @Override
     public String toString() {
         return "JS{" +
-                "js_nb='" + js_nb + '\'' +
+                "js_nb=" + js_nb +
                 ", js_se='" + js_se + '\'' +
                 ", js_pt='" + js_pt + '\'' +
                 ", js_name='" + js_name + '\'' +
