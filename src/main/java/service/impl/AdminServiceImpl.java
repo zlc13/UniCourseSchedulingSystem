@@ -107,6 +107,7 @@ public class AdminServiceImpl implements AdminService {
                 }
             }
 
+
             System.out.println("排好课后的情况"+bjksList2);
 
             //插入更新后的数据到数据库
