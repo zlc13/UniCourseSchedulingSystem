@@ -73,7 +73,7 @@
                     </li>
                     <li class=" nav-item"><a target="iframeMain" href="JsData"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">手动排课</span></a>
                     </li>
-                    <li class=" nav-item"><a target="iframeMain" href="wizard-forms"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">自动排课</span></a>
+                    <li class=" nav-item"><a  href="wizard-forms"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">自动排课</span></a>
                     </li>
 
                 </ul>

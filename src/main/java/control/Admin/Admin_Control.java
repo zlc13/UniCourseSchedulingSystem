@@ -79,7 +79,7 @@ public class Admin_Control {
         System.out.println(bjksList+"更新后的情况");
 
 
-        modelAndView.setViewName("dt-api");
+        modelAndView.setViewName("adminIndex");
 
         return modelAndView;
     }
