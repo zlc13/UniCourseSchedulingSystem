@@ -88,6 +88,7 @@ public class Admin_Control {
     @RequestMapping("/JsData")
     public ModelAndView JsData(){
         ModelAndView modelAndView = new ModelAndView();
+        System.out.println("进入所有显示");
         List<JsStatus> jsStatusList = adminService.FindAllJsStatus();
         modelAndView.addObject("jslist",jsStatusList);
         modelAndView.setViewName("app-contact");
