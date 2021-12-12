@@ -87,6 +87,10 @@
         insert into js_data values(#{js_nb},#{js_se},#{js_pt},#{js_name})
     </select>
 
+    <!--添加班级课程数据-->
+    <select id="AddClassCourse" parameterType="Model.Bjks">
+        insert into bjks_data values(#{bj_nb},#{c_nb},#{time},#{tr_nb},#{js_nb},#{bjks_nb},#{day},#{js_name},#{c_na})
+    </select>
 
 
 </mapper>

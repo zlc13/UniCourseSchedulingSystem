@@ -31,7 +31,8 @@ public interface AdminService {
     public void AddClass(BjData bjData);
     //添加教室
     public void AddDataJs(JS js);
-
+    //添加班级上课科目
+    public boolean AddClassCourse(String bj_nb,String c_na, String tr_nb,String bjks_nb);
 
 
 }

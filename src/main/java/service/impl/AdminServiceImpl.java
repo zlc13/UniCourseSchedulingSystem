@@ -200,6 +200,27 @@ public class AdminServiceImpl implements AdminService {
         adminMapper.AddJsDta(js);
     }
 
+    @Override
+    public boolean AddClassCourse(String bj_nb, String c_nb, String tr_nb, String bjks_nb) {
+        Bjks bjks=new Bjks();
+        bjks.setBj_nb(bj_nb);
+        bjks.setC_nb(c_nb);
+        bjks.setTr_nb(tr_nb);
+        bjks.setBjks_nb(bjks_nb);
+
+        List<Bjks> bjksList=adminMapper.findAllClassTime();
+        for (Bjks value : bjksList) {
+            if (value.getBj_nb().equals(bj_nb) && value.getC_nb().equals(c_nb) ) {
+                System.out.println("改班级已有该课程");
+               return false;
+            }
+        }
+
+        adminMapper.AddClassCourse(bjks);
+
+
+        return true;
+    }
 
 
 }

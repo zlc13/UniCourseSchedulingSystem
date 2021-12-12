@@ -8,8 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>添加教室 </title>
     <link rel="icon" href="favicon.ico" type="image/ico">
-    <meta name="keywords" content="后台模板,后台管理系统,HTML模板">
-    <meta name="description" content="基于Bootstrap的后台管理系统模板">
+
     <meta name="author" content="ftsucai.com">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/fonts.css" rel="stylesheet">
@@ -19,13 +18,46 @@
 </head>
   
 <body>
-    
-    <!--页面主要内容-->
-    <script type="text/javascript">
-        function clickmsg(){
-            alert("添加成功");
-        }
+
+
+<%
+    request.setCharacterEncoding("utf-8");
+
+    String id= (String) session.getAttribute("id");
+%>
+
+
+
+<%
+    request.setCharacterEncoding("utf-8");
+
+    String m= (String) request.getAttribute("classcourse");
+    if (m==null){
+        m="";
+    }
+    System.out.println("进入修改密码是否成功方法");
+    if (m!=null){
+        System.out.printf(m);%>
+<script  type="text/javascript">
+        alert("<%=m%>");
     </script>
+<%}%>
+
+
+
+<%--     <% if (success!=null && success.equals("2")){%>--%>
+<%--    <script type="text/javascript">--%>
+<%--     function clickmsg(){--%>
+<%--          alert("添加失败");--%>
+<%--     }--%>
+<%--     window.reload;--%>
+<%--    </script>--%>
+
+<%--    <%}%>--%>
+
+
+    <!--页面主要内容-->
+
     <main class="">
       
       <div class="">
@@ -35,42 +67,21 @@
             <div class="card">
               <div class="card-body">
                   <script type="text/javascript">
-                      $(function (){
-                          $("#filehead").hide();
-                          $("#sure").hide();
-                          $("#head01").click(function (){
-                              $("#filehead").show();
-                              $("#sure").show();
-                          });
-                          $("#sure").click(function (){
-                              var url = $("#filehead").val();
-                              $("#hidgo").val(url);
-                              $.ajax({
-                                  url : "http://localhost:8080/userhead",
-                                  data : {"hid01":url},
-                                  type : "GET",
-                                  success : function (msg){
-                                      alert("修改成功啦!");
-                                      window.location.reload();
-                                  },
-                                  dataType : "text"
-                              });
-                          });
-                      });
+
                   </script>
 
                 <div class="">
                   <img src="picture/xmlg.png" alt="..." class="img-avatar">
                 </div>
                 <hr>
-                <form  class="site-form" action="AddJsSuccess" method="get">
+                <form  class="site-form" action="AddClassCourse" method="get">
                     <div class="form-group">
                     <label >班级编号</label>
                     <input type="text" name="bj_nb" class="form-control"  value=""/>
                   </div>
                   <div class="form-group">
                     <label >课程名</label>
-                    <input type="text" name="c_na" class="form-control" placeholder="" value="" >
+                    <input type="text" name="c_nb" class="form-control" placeholder="" value="" >
                   </div>
                     <div class="form-group">
                         <label >任课老师</label>
@@ -80,7 +91,7 @@
                         <label >课时编号</label>
                         <input type="text" name="bjks_nb" class="form-control" placeholder="" value="">
                     </div>
-                  <button type="submit" class="btn btn-primary" onclick="clickmsg()">保存</button>
+                  <button type="submit" class="btn btn-primary" >保存</button>
                 </form>
        
               </div>

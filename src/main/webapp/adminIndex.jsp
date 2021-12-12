@@ -10,13 +10,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Apex admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Apex admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="工作室">
     <title>管理员端</title>
 
-    <link rel="shortcut icon" type="image/png" href="images/Course.png">
+    <link rel="shortcut icon" type="image/png" href="picture/xmlg.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -77,7 +73,7 @@
                     </li>
                     <li class=" nav-item"><a target="iframeMain" href="app-contact.jsp"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">手动排课</span></a>
                     </li>
-                    <li class=" nav-item"><a href="TeachingClass"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">自动排课</span></a>
+                    <li class=" nav-item"><a target="iframeMain" href="wizard-forms"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">自动排课</span></a>
                     </li>
 
                 </ul>
@@ -122,7 +118,7 @@
         <div class="main-content">
             <div class="content-wrapper"><div class="row">
                 <div class="col-sm-12">
-                    <div class="content-header">任课班级</div>
+                    <div class="content-header">管理员功能</div>
                     <p class="content-sub-header"></p>
                 </div>
             </div>

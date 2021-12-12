@@ -71,7 +71,7 @@ public class Admin_Control {
 
         List<Bjks> bjksList=adminService.autoScheduling(banji);
 
-        if (bjksList!=null){
+        if (!bjksList.equals("")){
             System.out.println("课表更新完成");
         }else {
             System.out.println("您所选的班级已经排好课了");
@@ -195,6 +195,23 @@ public class Admin_Control {
         adminService.AddDataJs(js);
         modelAndView.setViewName("AddJsData");
         return modelAndView;
+    }
+
+    //添加教室
+    @RequestMapping("/AddClassCourse")
+    public String AddClassCourse(String bj_nb,String c_nb, String tr_nb,String bjks_nb, HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        ModelAndView modelAndView = new ModelAndView();
+        req.setCharacterEncoding("utf-8");
+
+        if (adminService.AddClassCourse(bj_nb,c_nb,tr_nb,bjks_nb)){
+            req.setAttribute("classcourse","增加成功");
+            System.out.println("增加成功");
+            return "AddClassCourse";
+        }else{
+            req.setAttribute("classcourse","增加失败");
+            System.out.println("增加失败");
+            return "AddClassCourse";
+        }
     }
 
     //通过查询教室显示所有课时这间教室状态

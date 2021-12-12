@@ -54,4 +54,6 @@ public interface AdminMapper {
     //添加教室信息
     public void AddJsDta(JS js);
 
+    //添加班级上课课程
+     public void AddClassCourse(Bjks bjks);
 }
