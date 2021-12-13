@@ -33,6 +33,18 @@ public interface AdminService {
     public void AddDataJs(JS js);
     //添加班级上课科目
     public boolean AddClassCourse(String bj_nb,String c_na, String tr_nb,String bjks_nb);
-
-
+    //通过Id查找班级课时表
+    public List<Bjks> FindIdCourse(Bjks bjks);
+    //通过Id查找教师课时表
+    public List<Trjs> FindIdTeacherCourse(Trjs trjs);
+    //判断课程编号和课程名是否匹配
+    public List<Course> CourseNameandNumber(Course course);
+    //通过编号查询是否有此学生
+    public List<Student> IdStudent(Student student);
+    //通过编号查询是否有此教师
+    public List<Teacher> IdTeacher(Teacher teacher);
+    //通过编号查询是否有此班级
+    public List<BjData> IdBjData(BjData bjData);
+    //通过编号查询是否有此教室
+    public List<JS> IdJs(JS js);
 }

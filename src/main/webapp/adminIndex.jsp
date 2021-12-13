@@ -73,7 +73,7 @@
                     </li>
                     <li class=" nav-item"><a target="iframeMain" href="JsData"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">手动排课</span></a>
                     </li>
-                    <li class=" nav-item"><a  href="wizard-forms"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">自动排课</span></a>
+                    <li class=" nav-item"><a target="iframeMain" href="wizard-forms"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">自动排课</span></a>
                     </li>
 
                 </ul>
@@ -240,11 +240,7 @@
         <h6 class="text-center text-bold-500 mb-3 text-uppercase sb-bg-img">侧边框图片</h6>
         <div class="cz-bg-image row sb-bg-img">
             <div class="col-sm-2 mb-3"><img src="image/tech.jpg" width="90" class="rounded sb-bg-01"></div>
-            <div class="col-sm-2 mb-3"><img src="static/picture/02.jpg" width="90" class="rounded sb-bg-02"></div>
-            <div class="col-sm-2 mb-3"><img src="static/picture/03.jpg" width="90" class="rounded sb-bg-03"></div>
-            <div class="col-sm-2 mb-3"><img src="static/picture/04.jpg" width="90" class="rounded sb-bg-04"></div>
-            <div class="col-sm-2 mb-3"><img src="static/picture/05.jpg" width="90" class="rounded sb-bg-05"></div>
-            <div class="col-sm-2 mb-3"><img src="static/picture/06.jpg" width="90" class="rounded sb-bg-06"></div>
+
         </div>
         <!-- Transparent BG Image Ends-->
         <div class="tl-bg-img d-none">

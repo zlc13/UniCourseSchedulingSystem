@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -19,13 +20,23 @@
 </head>
   
 <body>
-    
-    <!--页面主要内容-->
+
+<c:if test="${teacherresult=='false' }">
+    <script type="text/javascript">
+        alert("已经有此教师信息");
+    </script>
+</c:if>
+<c:if test="${teacherresult=='true' }">
+    <script type="text/javascript">
+        alert("添加成功");
+    </script>
+</c:if>
+ <%--   <!--页面主要内容-->
     <script type="text/javascript">
         function clickmsg(){
             alert("添加成功");
         }
-    </script>
+    </script>--%>
     <main class="">
       
       <div class="">

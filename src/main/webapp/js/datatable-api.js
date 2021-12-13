@@ -50,7 +50,7 @@ $(document).ready(function() {
         "sDom": '<"x_content"B><"top"lf>rt<"bottom"ip><"clear">', //定义处理范围
         "bom":true,
         "pageLength": 1,
-        "lengthMenu": [ 1,10, 25, 50, 75, 100 ],
+        "lengthMenu": [ 3,10, 25, 50, 75, 100 ],
 //    dom: "Blfrtip", //定义按钮的位置
         buttons: [          // 定义各按钮
             {
@@ -182,7 +182,7 @@ $(document).ready(function() {
         "sDom": '<"x_content"B><"top"lf>rt<"bottom"ip><"clear">', //定义处理范围
         "bom":true,
         "pageLength": 1,
-        "lengthMenu": [ 1,10, 25, 50, 75, 100 ],
+        "lengthMenu": [ 3,10, 25, 50, 75, 100 ],
 //    dom: "Blfrtip", //定义按钮的位置
         buttons: [          // 定义各按钮
             {

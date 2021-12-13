@@ -37,9 +37,24 @@
         alert("暂无此教室");
     </script>
 </c:if>
+<c:if test="${result=='bjkstrue' }">
+    <script type="text/javascript">
+        alert("班级课表已有此数据");
+    </script>
+</c:if>
+<c:if test="${result=='trjstrue' }">
+    <script type="text/javascript">
+        alert("教师课表已有此数据");
+    </script>
+</c:if>
+<c:if test="${result=='coursetrue' }">
+    <script type="text/javascript">
+        alert("班级编号和班级名称不符");
+    </script>
+</c:if>
 <c:if test="${result=='false' }">
     <script type="text/javascript">
-            alert("教室已被使用");
+        alert("教室已被使用");
     </script>
 </c:if>
 <c:if test="${result=='true' }">

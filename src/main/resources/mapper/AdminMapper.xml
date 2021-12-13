@@ -92,5 +92,46 @@
         insert into bjks_data values(#{bj_nb},#{c_nb},#{time},#{tr_nb},#{js_nb},#{bjks_nb},#{day},#{js_name},#{c_na})
     </select>
 
+    <!--通过班级课时Id查找班级课时-->
+    <select id="IdfindCourse"  parameterType="Model.Bjks" resultType="Model.Bjks">
+
+        select * from bjks_data where bjks_nb=#{bjks_nb}
+    </select>
+
+    <!--通过教师课时Id查找教师课时-->
+    <select id="IdfindTeacherCourse"  parameterType="Model.Trjs" resultType="Model.Trjs">
+
+        select * from trjs_data where trjs_nb=#{trjs_nb}
+    </select>
+
+    <!--判断课程编号和课程名是否匹配-->
+    <select id="NumberAndNameCourse"  parameterType="Model.Course" resultType="Model.Course">
+
+        select * from c_data where c_nb=#{c_nb} and c_na=#{c_na}
+    </select>
+
+    <!--通过编号查询是否有此学生-->
+    <select id="ThroughIdStudent"  parameterType="Model.Student" resultType="Model.Student">
+
+        select * from student where student=#{student}
+    </select>
+
+    <!--通过编号查询是否有此教师-->
+    <select id="ThroughIdTeacher"  parameterType="Model.Teacher" resultType="Model.Teacher">
+
+        select * from tr_data where tr_nb=#{tr_nb}
+    </select>
+
+    <!--通过编号查询是否有此班级-->
+    <select id="ThroughIdBjData"  parameterType="Model.BjData" resultType="Model.BjData">
+
+        select * from bj_data where bj_nb=#{bj_nb}
+    </select>
+
+    <!--通过编号查询是否有此教室-->
+    <select id="ThroughIdJsStatus"  parameterType="Model.JS" resultType="Model.JS">
+
+        select * from js_data where js_nb=#{js_nb}
+    </select>
 
 </mapper>

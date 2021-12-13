@@ -150,9 +150,8 @@
           <form  class="site-form" action="/urclass" method="get">
             <input type="hidden" name="student_num" id="num" value="<%=account_num%>">
           <div class="card-body table-responsive" >
-            <button  class="btn btn-primary mb-2" type="submit"><i class="ft-plus"></i>&nbsp; 查看课表</button>
+            <button  class="btn btn-primary mb-2" type="submit"><i class="ft-plus"></i>&nbsp; 查看班级信息</button>
 
-            <button id="addRow" class="btn btn-primary mb-2"><i class="ft-plus"></i>&nbsp; 添加人数</button>
             <table id="datatable-buttonss" class="table table-striped table-bordered add-rows">
               <thead>
               <tr>
@@ -332,11 +331,7 @@
         <h6 class="text-center text-bold-500 mb-3 text-uppercase sb-bg-img">侧边框图片</h6>
         <div class="cz-bg-image row sb-bg-img">
           <div class="col-sm-2 mb-3"><img src="image/tech.jpg" width="90" class="rounded sb-bg-01"></div>
-          <div class="col-sm-2 mb-3"><img src="static/picture/02.jpg" width="90" class="rounded sb-bg-02"></div>
-          <div class="col-sm-2 mb-3"><img src="static/picture/03.jpg" width="90" class="rounded sb-bg-03"></div>
-          <div class="col-sm-2 mb-3"><img src="static/picture/04.jpg" width="90" class="rounded sb-bg-04"></div>
-          <div class="col-sm-2 mb-3"><img src="static/picture/05.jpg" width="90" class="rounded sb-bg-05"></div>
-          <div class="col-sm-2 mb-3"><img src="static/picture/06.jpg" width="90" class="rounded sb-bg-06"></div>
+
         </div>
         <!-- Transparent BG Image Ends-->
         <div class="tl-bg-img d-none">

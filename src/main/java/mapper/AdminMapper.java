@@ -56,4 +56,18 @@ public interface AdminMapper {
 
     //添加班级上课课程
      public void AddClassCourse(Bjks bjks);
+    //通过班级课时编号查找班级课时
+    public List<Bjks> IdfindCourse(Bjks bjks);
+    //通过教师课时编号查找教师课时
+    public List<Trjs> IdfindTeacherCourse(Trjs trjs);
+    //判断课程编号和课程名是否匹配
+    public List<Course> NumberAndNameCourse(Course course);
+    //通过编号查询是否有此学生
+    public List<Student> ThroughIdStudent(Student student);
+    //通过编号查询是否有此教师
+    public List<Teacher> ThroughIdTeacher(Teacher teacher);
+    //通过编号查询是否有此班级
+    public List<BjData> ThroughIdBjData(BjData bjData);
+    //通过编号查询是否有此教师
+    public List<JS> ThroughIdJsStatus(JS js);
 }

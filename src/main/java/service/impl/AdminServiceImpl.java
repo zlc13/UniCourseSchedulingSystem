@@ -230,5 +230,49 @@ public class AdminServiceImpl implements AdminService {
         return true;
     }
 
+    //通过Id查找班级课时表
 
+    @Override
+    public List<Bjks> FindIdCourse(Bjks bjks) {
+        List<Bjks> bjksList = adminMapper.IdfindCourse(bjks);
+        return bjksList;
+    }
+
+    //通过Id查找教师课时表
+
+    @Override
+    public List<Trjs> FindIdTeacherCourse(Trjs trjs) {
+        List<Trjs> trjsList = adminMapper.IdfindTeacherCourse(trjs);
+        return trjsList;
+    }
+
+    @Override
+    public List<Course> CourseNameandNumber(Course course) {
+        List<Course> courseList = adminMapper.NumberAndNameCourse(course);
+        return courseList;
+    }
+
+    @Override
+    public List<Student> IdStudent(Student student) {
+        List<Student> studentList = adminMapper.ThroughIdStudent(student);
+        return studentList;
+    }
+
+    @Override
+    public List<Teacher> IdTeacher(Teacher teacher) {
+        List<Teacher> teacherList = adminMapper.ThroughIdTeacher(teacher);
+        return teacherList;
+    }
+
+    @Override
+    public List<BjData> IdBjData(BjData bjData) {
+        List<BjData> bjDataList = adminMapper.ThroughIdBjData(bjData);
+        return bjDataList;
+    }
+
+    @Override
+    public List<JS> IdJs(JS js) {
+       List<JS> jsList = adminMapper.ThroughIdJsStatus(js);
+        return null;
+    }
 }

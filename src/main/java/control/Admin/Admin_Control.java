@@ -66,20 +66,23 @@ public class Admin_Control {
     @RequestMapping("/auto")
     public ModelAndView Selectaccount(String banji,String grade,  HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         ModelAndView modelAndView=new ModelAndView();
-
+        req.setCharacterEncoding("utf-8");
         System.out.println(banji+"班级id");
 
         List<Bjks> bjksList=adminService.autoScheduling(banji);
 
-        if (!bjksList.equals("")){
-            System.out.println("课表更新完成");
-        }else {
+        if (bjksList.size() ==0 || bjksList==null){
+            req.setAttribute("classaddcourse","增加失败,您所选定班级已经全部排好课了或已在手动排课中");
             System.out.println("您所选的班级已经排好课了");
+
+        }else {
+            req.setAttribute("classaddcourse","增加成功");
+            System.out.println("课表更新完成");
         }
         System.out.println(bjksList+"更新后的情况");
 
 
-        modelAndView.setViewName("adminIndex");
+        modelAndView.setViewName("wizard-forms");
 
         return modelAndView;
     }
@@ -97,7 +100,7 @@ public class Admin_Control {
 
     //插入教室
     @RequestMapping("/SearchJsData")
-    public ModelAndView SearchJsData(Bjks bjks, Trjs trjs,JsStatus jsStatus){
+    public ModelAndView SearchJsData(Bjks bjks, Trjs trjs,Course course,JsStatus jsStatus){
         ModelAndView modelAndView = new ModelAndView();
         List<JsStatus> jsStatusList = adminService.FindAllJsStatus();
         List<JsStatus> AddjsStatusList=adminService.FindDayandTimeJs(jsStatus.getDay(),jsStatus.getTime(), jsStatus.getJs_name());
@@ -116,6 +119,35 @@ public class Admin_Control {
                 modelAndView.setViewName("app-contact");
                 return modelAndView;
             }else{
+                List<Bjks> bjksList = adminService.FindIdCourse(bjks);
+                List<Trjs> trjsList = adminService.FindIdTeacherCourse(trjs);
+                List<Course> courseList = adminService.CourseNameandNumber(course);
+                if(bjksList!=null&&!bjksList.isEmpty()){
+                    System.out.println("班级课表已有此数据");
+                    modelAndView.addObject("jslist",jsStatusList);
+                    modelAndView.addObject("result","bjkstrue");
+                    modelAndView.setViewName("app-contact");
+                    return modelAndView;
+                }
+                if(trjsList!=null&&!trjsList.isEmpty()){
+                    System.out.println("教师课表已有此数据");
+                    modelAndView.addObject("jslist",jsStatusList);
+                    modelAndView.addObject("result","trjstrue");
+                    modelAndView.setViewName("app-contact");
+                    return modelAndView;
+                }
+
+                if(courseList!=null&&!courseList.isEmpty())
+                {
+                    System.out.println(courseList);
+                    System.out.println("课程编号和课程名不符");
+                }else{
+                    System.out.println("课程编号和课程名不符");
+                    modelAndView.addObject("jslist",jsStatusList);
+                    modelAndView.addObject("result","coursetrue");
+                    modelAndView.setViewName("app-contact");
+                    return modelAndView;
+                }
                 js_nb=AddjsStatusList.get(0).getJs_nb();
                 jsStatus=AddjsStatusList.get(0);
                 bjks.setJs_nb(js_nb);
@@ -165,16 +197,25 @@ public class Admin_Control {
     //添加学生
     @RequestMapping("/AddStudentSuccess")
     public ModelAndView AddStudent(Student student){
-        ModelAndView modelAndView = new ModelAndView();
-        adminService.AddStudentData(student);
-        modelAndView.setViewName("AddStudent");
-        return modelAndView;
+            ModelAndView modelAndView = new ModelAndView();
+            adminService.AddStudentData(student);
+            modelAndView.addObject("result","true");
+            modelAndView.setViewName("AddStudent");
+            return modelAndView;
     }
 
     //添加教师
     @RequestMapping("/AddTeacherSuccess")
     public ModelAndView AddSTeacher(Teacher teacher){
+        List<Teacher> teacherList = adminService.IdTeacher(teacher);
+        if(teacherList!=null&&!teacherList.isEmpty()){
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.addObject("teacherresult","false");
+            modelAndView.setViewName("AddTeacher");
+            return modelAndView;
+        }
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("teacherresult","true");
         adminService.AddTeachertData(teacher);
         modelAndView.setViewName("AddTeacher");
         return modelAndView;

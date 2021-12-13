@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -19,14 +20,12 @@
 </head>
   
 <body>
-    
-    <!--页面主要内容-->
-    <script type="text/javascript">
-        function clickmsg(){
-            alert("添加成功");
-        }
-    </script>
 
+<script type="text/javascript">
+    function clickmsg(){
+        alert("添加成功");
+    }
+</script>
     <main class="">
       
       <div class="">

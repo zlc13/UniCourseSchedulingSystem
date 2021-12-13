@@ -41,76 +41,28 @@
     String id= (String) session.getAttribute("id");
 %>
 
+
+<%
+    request.setCharacterEncoding("utf-8");
+
+    String m= (String) request.getAttribute("classaddcourse");
+    if (m==null){
+        m="";
+    }
+    if (m!=null){
+        System.out.printf(m);%>
+<script  type="text/javascript">
+    alert("<%=m%>");
+</script>
+<%}%>
+
 <!-- BEGIN : Body-->
 <body data-col="2-columns" class=" 2-columns ">
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 <div class="wrapper">
 
 
-    <!-- main menu-->
-    <%--      <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->--%>
-    <div data-active-color="black" data-background-color="white" data-image="" class="app-sidebar">
-        <!-- main menu header-->
-        <!-- Sidebar Header starts-->
-        <div class="sidebar-header">
-            <div class="logo clearfix"><a href="index.jsp" class="logo-text float-left">
-                <div class="logo-img"><img  width="30px" height="30px" src="images/Course.png"></div><span class="text align-middle">学生端</span></a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i data-toggle="expanded" class="toggle-icon ft-toggle-left"></i></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-x"></i></a></div>
-        </div>
-        <!-- Sidebar Header Ends-->
-        <!-- / main menu header-->
-        <!-- main menu content-->
-        <div class="sidebar-content">
-            <div class="nav-container">
-                <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true" class="navigation navigation-main">
-                    <li class=" nav-item"><a href="#"><i class="ft-home"></i><span data-i18n="" class="menu-title">增加学生</span></a>
 
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="ft-droplet"></i><span data-i18n="" class="menu-title">增加老师</span></a>
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="ft-mail"></i><span data-i18n="" class="menu-title">增加教室</span></a>
-                    </li>
-
-                    <li class=" nav-item"><a href="#"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">手动排课</span></a>
-                    </li>
-                    <li class=" nav-item"><a href="wizard-forms"><i class="ft-calendar"></i><span data-i18n="" class="menu-title">自动排课</span></a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-        <!-- main menu content-->
-        <div class="sidebar-background"></div>
-        <!-- main menu footer-->
-        <!-- include includes/menu-footer-->
-        <!-- main menu footer-->
-    </div>
-    <!-- / main menu-->
-
-
-    <!-- Navbar (Header) Starts-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-faded header-navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" data-toggle="collapse" class="navbar-toggle d-lg-none float-left"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><span class="d-lg-none navbar-right navbar-collapse-toggle"><a aria-controls="navbarSupportedContent" href="javascript:;" class="open-navbar-container black"><i class="ft-more-vertical"></i></a></span>
-
-            </div>
-            <div class="navbar-container">
-                <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                    <ul class="navbar-nav">
-                        <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;" class="nav-link apptogglefullscreen"><i class="ft-maximize font-medium-3 blue-grey darken-4"></i>
-                            <p class="d-none">全屏</p>全屏</a></li>
-                        <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown" class="nav-link position-relative "><i class="ft-user font-medium-3 blue-grey darken-4"></i>
-                            <p class="d-none">用户设置</p><%=id%>个人资料</a>
-
-                        </li>
-                        <li class="nav-item d-none d-lg-block"><a href="javascript:;" class="nav-link position-relative notification-sidebar-toggle"><i class="ft-align-left font-medium-3 blue-grey darken-4"></i>
-                            <p class="d-none">提示框</p></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar (Header) Ends-->
 
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
